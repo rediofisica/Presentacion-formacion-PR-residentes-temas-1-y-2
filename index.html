@@ -1,43 +1,1687 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta
-			name="viewport"
-			content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-		/>
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Temas 1 y 2 - Estructura Atómica y Radiaciones Ionizantes</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Liberation+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Liberation+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <style>
+    /* Regla obligatoria Reveal.js Anti-Desfase Vertical */
+    .reveal .slides {
+      text-align: left !important;
+    }
+    .reveal .slides section {
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 960px !important;
+      height: 700px !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      box-sizing: border-box;
+      background-color: #ffffff;
+      overflow: hidden;
+      color: #000000;
+      text-align: left;
+    }
+    .reveal .slides section * {
+      box-sizing: border-box;
+    }
+    .reveal img {
+      margin: 0 !important;
+      max-width: none !important;
+      max-height: none !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
+    .reveal table {
+      margin: 0;
+      border-collapse: collapse;
+    }
+    .reveal table td, .reveal table th {
+      border: none;
+      padding: 0;
+    }
+    .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6,
+    .reveal p, .reveal div, .reveal span, .reveal li {
+      font-family: inherit;
+      text-transform: none;
+      letter-spacing: normal;
+    }
 
-		<title>reveal.js</title>
+    /* Superíndices y subíndices para fórmulas nucleares */
+    sup {
+      vertical-align: super !important;
+      font-size: 0.65em !important;
+      line-height: 0 !important;
+    }
+    sub {
+      vertical-align: sub !important;
+      font-size: 0.65em !important;
+      line-height: 0 !important;
+    }
 
-		<link rel="stylesheet" href="dist/reset.css" />
-		<link rel="stylesheet" href="dist/reveal.css" />
-		<link rel="stylesheet" href="dist/theme/black.css" />
+    /* ==========================================
+       Aislamiento de Clases CSS - Parte 1
+       ========================================== */
+    .reveal .slides section.parte1,
+    .reveal .slides section.p1-slide {
+      font-family: 'Roboto', 'Liberation Sans', Arial, sans-serif;
+      color: #000000;
+      text-align: left;
+    }
+    .parte1 .header-banner,
+    .p1-slide .header-banner {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 960px;
+      height: 67px;
+      background-color: #00b8ff;
+      color: #ffffff;
+      font-size: 26px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      padding-left: 35px;
+      box-sizing: border-box;
+      letter-spacing: 0.5px;
+    }
+    .parte1 .footer-line,
+    .p1-slide .footer-line {
+      position: absolute;
+      left: 0;
+      top: 620px;
+      width: 843px;
+      height: 0;
+      border-top: 3px solid #00b8ff;
+    }
+    .parte1 .footer-logo,
+    .p1-slide .footer-logo {
+      position: absolute;
+      left: 21px;
+      top: 627px;
+      width: 75px;
+      height: 46px;
+      object-fit: contain;
+    }
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="dist/plugin/highlight/monokai.css" />
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+    /* ==========================================
+       Aislamiento de Clases CSS - Parte 2
+       ========================================== */
+    .reveal .slides section.parte2,
+    .reveal .slides section.p2-slide {
+      font-family: 'Liberation Sans', Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      font-size: 20px;
+      color: #000000;
+      text-align: left;
+    }
+    .parte2 .slide-header,
+    .p2-slide .slide-header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 960px;
+      height: 67px;
+      background-color: #00b8ff;
+      display: flex;
+      align-items: center;
+      padding-left: 51px;
+      box-sizing: border-box;
+    }
+    .parte2 .slide-header h2,
+    .p2-slide .slide-header h2 {
+      font-size: 28px;
+      font-weight: normal;
+      color: #ffffff;
+      margin: 0;
+    }
+    .parte2 .sacyl-footer-line,
+    .p2-slide .sacyl-footer-line {
+      position: absolute;
+      top: 620px;
+      left: 0;
+      width: 843px;
+      height: 3px;
+      background-color: #00b8ff;
+    }
+    .parte2 .sacyl-logo,
+    .p2-slide .sacyl-logo {
+      position: absolute;
+      top: 627px;
+      left: 21px;
+      width: 75px;
+      height: 46px;
+      object-fit: contain;
+    }
 
-		<script src="dist/reveal.js"></script>
-		<script src="dist/plugin/notes.js"></script>
-		<script src="dist/plugin/markdown.js"></script>
-		<script src="dist/plugin/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+    /* ==========================================
+       Aislamiento de Clases CSS - Parte 3
+       ========================================== */
+    .reveal .slides section.parte3,
+    .reveal .slides section.p3-slide {
+      font-family: 'Calibri', 'Segoe UI', Arial, sans-serif;
+      color: #000000;
+      text-align: left !important;
+    }
+    .parte3 .master-header,
+    .p3-slide .master-header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 960px;
+      height: 67px;
+      background-color: #00b8ff;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      padding-left: 54px;
+      font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      box-sizing: border-box;
+      z-index: 10;
+      text-align: left;
+    }
+    .parte3 .master-footer-line,
+    .p3-slide .master-footer-line {
+      position: absolute;
+      top: 620px;
+      left: 0;
+      width: 843px;
+      height: 2px;
+      background-color: #00b8ff;
+      z-index: 10;
+    }
+    .parte3 .master-footer-logo,
+    .p3-slide .master-footer-logo {
+      position: absolute;
+      top: 627px;
+      left: 21px;
+      width: 75px;
+      height: 46px;
+      z-index: 10;
+    }
+    .parte3 table.natural-radiation,
+    .p3-slide table.natural-radiation {
+      border-collapse: collapse;
+      width: 780px;
+      font-family: 'Calibri', 'Segoe UI', Arial, sans-serif;
+      font-size: 16px;
+      border: 1px solid #ffffff;
+      box-sizing: border-box;
+    }
+    .parte3 table.natural-radiation th,
+    .p3-slide table.natural-radiation th {
+      background-color: #4f81bd;
+      color: #ffffff;
+      font-weight: bold;
+      padding: 7px 16px;
+      font-size: 17px;
+      text-align: left;
+      border: 1px solid #ffffff;
+    }
+    .parte3 table.natural-radiation td,
+    .p3-slide table.natural-radiation td {
+      padding: 5px 16px;
+      border: 1px solid #ffffff;
+      text-align: left;
+    }
+    .parte3 table.natural-radiation tr.subhead td,
+    .p3-slide table.natural-radiation tr.subhead td {
+      font-weight: bold;
+      color: #984807;
+      text-align: center;
+      padding: 6px 16px;
+      font-size: 17px;
+    }
+    .parte3 table.natural-radiation td.indent,
+    .p3-slide table.natural-radiation td.indent {
+      text-indent: 18px;
+    }
+    .parte3 .box-yellow,
+    .p3-slide .box-yellow {
+      background-color: #ffffcc;
+      border: 1px solid #000000;
+      border-radius: 4px;
+      box-sizing: border-box;
+      text-align: left;
+    }
+    .parte3 .box-green,
+    .p3-slide .box-green {
+      background-color: #d7e4bd;
+      border-radius: 4px;
+      box-sizing: border-box;
+      text-align: left;
+    }
+    .parte3 .box-grey,
+    .p3-slide .box-grey {
+      background-color: #eeece1;
+      border-radius: 4px;
+      box-sizing: border-box;
+      text-align: left;
+    }
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
-			});
-		</script>
-	</body>
+    /* ==========================================
+       Aislamiento de Clases CSS - Parte 4
+       ========================================== */
+    .reveal .slides section.parte4,
+    .reveal .slides section.p4-slide {
+      font-family: 'Roboto', 'Liberation Sans', Arial, sans-serif;
+      color: #000000;
+      text-align: left;
+    }
+    .parte4 .title-banner,
+    .p4-slide .title-banner {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 960px;
+      background-color: #00b8ff;
+      color: #ffffff;
+      font-family: 'Roboto', Arial, sans-serif;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      padding-left: 50px;
+      padding-right: 30px;
+      box-sizing: border-box;
+    }
+    .parte4 .footer-line,
+    .p4-slide .footer-line {
+      position: absolute;
+      left: 0;
+      top: 620px;
+      width: 843px;
+      height: 3px;
+      background-color: #00b8ff;
+    }
+    .parte4 .footer-logo,
+    .p4-slide .footer-logo {
+      position: absolute;
+      left: 21px;
+      top: 627px;
+      width: 75px;
+      height: 47px;
+      object-fit: contain;
+    }
+    .parte4 .section-banner-light,
+    .p4-slide .section-banner-light {
+      position: absolute;
+      background-color: #f0fede;
+      border: 1px solid #98b855;
+      color: #000000;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      padding-left: 20px;
+      box-sizing: border-box;
+    }
+
+    /* ==========================================
+       Aislamiento de Clases CSS - Parte 5
+       ========================================== */
+    .reveal .slides section.parte5,
+    .reveal .slides section.p5-slide {
+      font-family: 'Roboto', 'Liberation Sans', Arial, sans-serif;
+      color: #000000;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+<section class="parte1 p1-slide" style="width:960px;height:700px;background-color:#ffffff;overflow:hidden;">
+<img alt="UVa" src="assets/parte1_100000000000010200000084C2ADFD20.jpg" style="position: absolute; left: 27px; top: 30px; width: 234px; height: 116px; object-fit: contain;"/>
+<img alt="Hospital Clínico" src="assets/parte1_10000000000001800000010C7BD128F1.jpg" style="position: absolute; left: 699px; top: 17px; width: 226px; height: 154px; object-fit: contain;"/>
+<div style="position: absolute; left: 48px; top: 32px; width: 864px; height: 117px; display: flex; align-items: center; justify-content: center; font-size: 38px; font-weight: bold; color: #000000; letter-spacing: 1px;">TEMA 1-2</div>
+<div style="position: absolute; left: 48px; top: 180px; width: 864px; height: 232px; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 34px; font-weight: bold; color: #000000; line-height: 1.35; padding: 0 40px; box-sizing: border-box;">
+          ESTRUCTURA ATÓMICA Y<br/>NUCLEAR, PRODUCCIÓN E<br/>INTERACCIÓN CON LA<br/>RADIACIÓN
+        </div>
+<div style="position: absolute; left: 48px; top: 410px; width: 864px; height: 196px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; font-size: 24px; color: #000000; line-height: 1.5;">
+<div>Manuel Ángel Benito Bejarano</div>
+<div><a href="mailto:mbenitob@saludcastillayleon.es" style="color: #0047ff; text-decoration: underline;">mbenitob@saludcastillayleon.es</a></div>
+</div>
+<div class="footer-line"></div>
+<img alt="SACYL" class="footer-logo" src="assets/parte1_10000000000000EF00000098E388084E.jpg"/>
+</section>
+<section class="parte1 p1-slide" style="width:960px;height:700px;background-color:#ffffff;overflow:hidden;">
+<div class="header-banner">BIBLIOGRAFÍA Y DOCUMENTACIÓN</div>
+<div style="position: absolute; left: 60px; top: 130px; width: 840px; font-size: 22px; line-height: 1.7; color: #000000;">
+<p style="margin: 0 0 36px 0;">Las presentaciones estarán disponibles por correo electrónico.</p>
+<p style="margin: 0 0 8px 0;">Otros recursos de formación: Cursos Operadores y Supervisores CSN-Ciemat:</p>
+<p style="margin: 0 0 36px 0;"><a href="http://csn.ciemat.es/MDCSN/portal.do?" style="color: #0047ff; text-decoration: underline;" target="_blank">http://csn.ciemat.es/MDCSN/portal.do?</a></p>
+<p style="margin: 0;">Otras dudas: Servicio Radiofísica, tlf. 48998</p>
+</div>
+<div class="footer-line"></div>
+<img alt="SACYL" class="footer-logo" src="assets/parte1_10000000000000EF00000098E388084E.jpg"/>
+</section>
+<section class="parte1 p1-slide" style="width:960px;height:700px;background-color:#ffffff;overflow:hidden;">
+<img alt="Esquema temático" src="assets/parte1_10000000000002FE00000330FEB1646E.png" style="position: absolute; left: 219px; top: 68px; width: 521px; height: 540px; object-fit: contain;"/>
+<div class="footer-line"></div>
+<img alt="SACYL" class="footer-logo" src="assets/parte1_10000000000000EF00000098E388084E.jpg"/>
+</section>
+<section class="parte1 p1-slide" style="width:960px;height:700px;background-color:#ffffff;overflow:hidden;">
+<div style="position: absolute; left: 48px; top: 117px; width: 864px; height: 289px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; font-size: 32px; font-weight: normal; color: #000000; line-height: 1.5;">
+          ESTRUCTURA DE LA MATERIA:<br/>MOLÉCULAS, ÁTOMOS Y<br/>PARTÍCULAS FUNDAMENTALES<br/>RADIACIÓN<br/>ELECTROMAGNÉTICA
+        </div>
+<div class="footer-line"></div>
+<img alt="SACYL" class="footer-logo" src="assets/parte1_10000000000000EF00000098E388084E.jpg"/>
+</section>
+<section class="parte1 p1-slide" style="width:960px;height:700px;background-color:#ffffff;overflow:hidden;">
+<div class="header-banner">INTRODUCCIÓN</div>
+<div style="position: absolute; left: 48px; top: 120px; width: 480px; font-size: 16.5px; line-height: 1.45; text-align: justify; color: #000000;">
+<p style="margin: 0 0 24px 0;">"Si en algún cataclismo fuera destruído todo el conocimiento científico y solamente pasara una frase a la generación siguiente de criaturas, ¿cuál enunciado contendría el máximo de información en el mínimo de palabras? - Yo creo que es la hipótesis atómica, que todas las cosas están formadas por átomos -pequeñas partículas que se mueven con movimiento perpetuo, atrayéndose unas a otras cuando están separadas por una pequeña distancia, pero repeliéndose cuando se las trata de apretar una contra otra. En esa sola frase, verán ustedes hay una cantidad enorme de información referente al mundo, si se aplica sólo un poco de imaginación y pensamiento."</p>
+<p style="margin: 0 0 6px 0; font-weight: normal; font-size: 18px;">Richard Feynman</p>
+<p style="margin: 0; font-style: italic; font-size: 15.5px;">"Feynman Lectures on Physics", (Vol.1, Cap.1, Sec.1-2)</p>
+</div>
+<img alt="Richard Feynman" src="assets/parte1_1000000000000366000004B0373BFF4E.jpg" style="position: absolute; left: 555px; top: 120px; width: 330px; height: 440px; object-fit: contain;"/>
+<div class="footer-line"></div>
+<img alt="SACYL" class="footer-logo" src="assets/parte1_10000000000000EF00000098E388084E.jpg"/>
+</section>
+<section class="parte1 p1-slide" style="width:960px;height:700px;background-color:#ffffff;overflow:hidden;">
+<div class="header-banner">EL ÁTOMO</div>
+<div style="position: absolute; left: 112px; top: 95px; width: 188px; height: 38px; background-color: #bbe0e3; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 20px; color: #000000; border-radius: 4px; z-index: 10;">EL ÁTOMO</div>
+<div style="position: absolute; left: 308px; top: 88px; font-size: 32px; font-weight: bold; color: #000000; line-height: 1; z-index: 10;"><span style="display: inline-block; vertical-align: middle; font-size: 16px; margin-right: 4px; line-height: 1.2; text-align: right;"><span style="display: block;">A</span><span style="display: block;">Z</span></span><span style="vertical-align: middle; font-size: 38px;">X</span></div>
+<div style="position: absolute; left: 428px; top: 100px; width: 480px; height: 34px; background-color: #ffffff; display: flex; align-items: center; padding-left: 14px; font-size: 18px; font-weight: bold; color: #000000; z-index: 10;">• Toda la materia está constituida por átomos</div>
+<img alt="Átomo" src="assets/parte1_slide6_atomo.png" style="position: absolute; left: 48px; top: 102px; width: 360px; height: 307px; object-fit: contain; pointer-events: none; z-index: 1;"/>
+<img alt="Materia y Átomo" src="assets/parte1_slide6_roca_flecha.png" style="position: absolute; left: 342px; top: 166px; width: 482px; height: 231px; pointer-events: none; z-index: 1;"/>
+<div style="position: absolute; left: 71px; top: 410px; width: 345px; height: 105px; background-color: #ffffff; border: 1px solid #333366; border-radius: 0; padding: 12px 14px; box-sizing: border-box; font-size: 16px; line-height: 1.35; display: flex; align-items: center; text-align: justify; color: #000000;"><span><strong>El átomo</strong> es la cantidad más pequeña de un <strong>elemento</strong> que conserva sus propiedades químicas.</span></div>
+<div style="position: absolute; left: 537px; top: 410px; width: 345px; height: 105px; background-color: #ffffff; border: 1px solid #333366; border-radius: 0; padding: 12px 14px; box-sizing: border-box; font-size: 16px; line-height: 1.35; display: flex; align-items: center; text-align: justify; color: #000000;"><span>Los átomos de cada <strong>elemento</strong> son iguales entre sí, pero <u>distintos</u> de los de <strong>otros elementos</strong></span></div>
+<div style="position: absolute; left: 72px; top: 528px; width: 810px; height: 58px; background-color: #ffffff; border: 1px solid #333366; border-radius: 0; padding: 0 16px; box-sizing: border-box; font-size: 16.5px; font-weight: bold; display: flex; align-items: center; justify-content: center; text-align: center; color: #000000;">Los compuestos químicos se forman por la combinación de los átomos de los distintos elementos</div>
+<div class="footer-line"></div>
+<img alt="SACYL" class="footer-logo" src="assets/parte1_10000000000000EF00000098E388084E.jpg"/>
+</section>
+<section class="parte1 p1-slide" style="width:960px;height:700px;background-color:#ffffff;overflow:hidden;">
+<div class="header-banner">LA MOLÉCULA</div>
+<div style="position: absolute; left: 48px; top: 100px; width: 864px; font-size: 22px; line-height: 1.4; color: #000000;">Los compuestos químicos se forman por la combinación de los átomos de los distintos elementos (Moléculas)</div>
+<div style="position: absolute; left: 80px; top: 210px; width: 350px; font-size: 26px; line-height: 2.2; color: #000000;">
+<div style="display: flex; align-items: center;"><span style="margin-right: 14px;">●</span><span>H<sub>2</sub>O</span></div>
+<div style="display: flex; align-items: center;"><span style="margin-right: 14px;">●</span><span>Proteínas</span></div>
+<div style="display: flex; align-items: center;"><span style="margin-right: 14px;">●</span><span>ADN</span></div>
+</div>
+<img alt="Molécula de agua" src="assets/parte1_1000000100000283000001AF651A16EB.png" style="position: absolute; left: 480px; top: 190px; width: 317px; height: 210px; object-fit: contain;"/>
+<div style="position: absolute; left: 48px; top: 480px; width: 864px; font-size: 22px; font-weight: normal; line-height: 1.4; color: #000000;">Las propiedades de las moléculas son diferentes a las de los átomos que las conforman</div>
+<div class="footer-line"></div>
+<img alt="SACYL" class="footer-logo" src="assets/parte1_10000000000000EF00000098E388084E.jpg"/>
+</section>
+<section class="parte1 p1-slide" style="width:960px;height:700px;background-color:#ffffff;overflow:hidden;">
+<div class="header-banner">LAS PARTÍCULAS: EL ELECTRÓN</div>
+<div style="position: absolute; left: 60px; top: 90px; width: 840px; font-size: 22.5px; line-height: 1.5; color: #000000;">
+<div style="margin-bottom: 12px;"><span style="margin-right: 12px;">●</span>Partícula fundamental (Leptón)</div>
+<div style="margin-bottom: 12px;"><span style="margin-right: 12px;">●</span>Símbolo: e - , β -</div>
+<div style="margin-bottom: 12px;"><span style="margin-right: 12px;">●</span>Tiene carga eléctrica negativa(-1)</div>
+<div style="margin-left: 36px; margin-bottom: 12px;">– Es la partícula libre con la carga más pequeña</div>
+<div style="margin-left: 36px; margin-bottom: 12px;">– Interacciona con otras partículas cargadas</div>
+<div style="margin-left: 36px; margin-bottom: 12px;">– Es la partícula atómica con la masa más pequeña</div>
+<div><span style="margin-right: 12px;">●</span>Antipartícula es el Positrón (carga +1, Símbolo e + , β + )</div>
+</div>
+<div class="footer-line"></div>
+<img alt="SACYL" class="footer-logo" src="assets/parte1_10000000000000EF00000098E388084E.jpg"/>
+</section>
+<section class="parte1 p1-slide" style="width:960px;height:700px;background-color:#ffffff;overflow:hidden;">
+<div class="header-banner">LAS PARTÍCULAS: EL PROTÓN</div>
+<div style="position: absolute; left: 60px; top: 105px; width: 840px; font-size: 23.5px; line-height: 1.55; color: #000000;">
+<div style="margin-bottom: 22px;"><span style="margin-right: 12px;">●</span>Partícula no fundamental (Hadrón, compuesta de quarks)</div>
+<div style="margin-bottom: 22px;"><span style="margin-right: 12px;">●</span>Símbolo: p</div>
+<div style="margin-bottom: 22px;"><span style="margin-right: 12px;">●</span>Su antipartícula es el antiprotón.</div>
+<div style="margin-bottom: 22px;"><span style="margin-right: 12px;">●</span>Tiene carga eléctrica positiva (+1) (Igual a la del electrón pero de signo contrario)</div>
+<div style="margin-bottom: 22px;"><span style="margin-right: 12px;">●</span>Interacciona con partículas cargadas</div>
+<div><span style="margin-right: 12px;">●</span>Su masa es mucho mayor que la del electrón.</div>
+</div>
+<div class="footer-line"></div>
+<img alt="SACYL" class="footer-logo" src="assets/parte1_10000000000000EF00000098E388084E.jpg"/>
+</section>
+<section class="parte1 p1-slide" style="width:960px;height:700px;background-color:#ffffff;overflow:hidden;">
+<div class="header-banner">LAS PARTÍCULAS: EL NEUTRÓN</div>
+<div style="position: absolute; left: 60px; top: 105px; width: 840px; font-size: 23.5px; line-height: 1.55; color: #000000;">
+<div style="margin-bottom: 22px;"><span style="margin-right: 12px;">●</span>Partícula no fundamental (Hadrón, compuesta de quarks)</div>
+<div style="margin-bottom: 22px;"><span style="margin-right: 12px;">●</span>Símbolo: n</div>
+<div style="margin-bottom: 22px;"><span style="margin-right: 12px;">●</span>No tiene carga.</div>
+<div style="margin-bottom: 22px;"><span style="margin-right: 12px;">●</span>No interacciona mediante la fuerza electromagnética.</div>
+<div style="margin-bottom: 22px;"><span style="margin-right: 12px;">●</span>Interacciona con neutrones y protones mediante fuerza fuerte</div>
+<div><span style="margin-right: 12px;">●</span>Su masa es un poco mayor que la del protón</div>
+</div>
+<div class="footer-line"></div>
+<img alt="SACYL" class="footer-logo" src="assets/parte1_10000000000000EF00000098E388084E.jpg"/>
+</section>
+<section class="parte1 p1-slide" style="width:960px;height:700px;background-color:#ffffff;overflow:hidden;">
+<div class="header-banner">UNIDADES DE MASA Y ENERGÍA</div>
+<div style="position: absolute; left: 54px; top: 74px; font-size: 16px; font-weight: bold; color: #000000;">El átomo es muy pequeño, por eso necesitamos definir unidades convenientes</div>
+<!-- Tabla Dimensiones -->
+<table style="position: absolute; left: 67px; top: 114px; width: 225px; border-collapse: collapse; font-size: 13.5px; border: 1px solid #000000;">
+<tr style="background-color: #ffffb0; font-weight: bold; text-align: center;"><th colspan="2" style="border: 1px solid #000000; padding: 4px 6px;">DIMENSIONES</th></tr>
+<tr style="background-color: #ffffff;"><td style="border: 1px solid #000000; padding: 4px 6px; font-weight: bold;">Átomos</td><td style="border: 1px solid #000000; padding: 4px 6px; text-align: center;">10<sup>-10</sup> m</td></tr>
+<tr style="background-color: #ffffff;"><td style="border: 1px solid #000000; padding: 4px 6px; font-weight: bold;">Núcleo</td><td style="border: 1px solid #000000; padding: 4px 6px; text-align: center;">10<sup>-15</sup> m</td></tr>
+</table>
+<!-- Caja Masa Fórmulas -->
+<div style="position: absolute; left: 358px; top: 107px; width: 520px; height: 110px; background-color: #ffffff; border: 1px solid #000000; border-radius: 4px; padding: 8px 12px; font-size: 13.5px; line-height: 1.5; color: #000000; box-sizing: border-box;">
+<div><span style="color: #a50021; font-weight: bold;">1 u.m.a.</span> = Unidad atómica de masa= 1/12 átomo <sup>12</sup>C (Carbono con 6 p + 6 n)</div>
+<div>1 uma = 1,6606 x 10<sup>-27</sup> Kg</div>
+<div>1 kg = 1/(1,606 x 10<sup>-27</sup> uma) = 6,22 x 10<sup>26</sup> uma</div>
+</div>
+<!-- Tabla Masa -->
+<table style="position: absolute; left: 46px; top: 205px; width: 291px; border-collapse: collapse; font-size: 12.5px; border: 1px solid #000000; background-color: #d4f6a5;">
+<tr style="background-color: #bbe0e3; font-weight: bold; text-align: center;"><th colspan="2" style="border: 1px solid #000000; padding: 3px 6px;">MASA</th></tr>
+<tr style="background-color: #d4f6a5;"><td style="border: 1px solid #000000; padding: 3px 6px; font-weight: bold; color: #333399;">Neutrón</td><td style="border: 1px solid #000000; padding: 3px 6px; text-align: center; color: #000000;">~ 1,008 u.m.a. = 1,675 · 10 <sup>-27</sup> kg</td></tr>
+<tr style="background-color: #d4f6a5;"><td style="border: 1px solid #000000; padding: 3px 6px; font-weight: bold; color: #a50021;">Protón</td><td style="border: 1px solid #000000; padding: 3px 6px; text-align: center; color: #000000;">~ 1,007 u.m.a. = 1,673 · 10 <sup>-27</sup> kg</td></tr>
+<tr style="background-color: #d4f6a5;"><td style="border: 1px solid #000000; padding: 3px 6px; font-weight: bold; color: #333399;">Electrón</td><td style="border: 1px solid #000000; padding: 3px 6px; text-align: center; color: #000000;">1/1836 u.m.a. = 9,11 · 10 <sup>-31</sup> kg</td></tr>
+</table>
+<!-- Caja Múltiplos -->
+<div style="position: absolute; left: 446px; top: 226px; width: 261px; height: 163px; background-color: #ff99cc; border: 1px solid #000000; border-radius: 4px; padding: 6px 12px; box-sizing: border-box;">
+<div style="font-weight: bold; font-size: 14px; text-align: center; margin-bottom: 4px; color: #000000;">Múltiplos</div>
+<div style="display: flex; justify-content: space-between; font-size: 13px; color: #000000; line-height: 1.55;">
+<div>
+<div>Mili = 10<sup>-3</sup></div>
+<div>Micro = 10<sup>-6</sup></div>
+<div>Nano = 10<sup>-9</sup></div>
+<div>Pico = 10<sup>-12</sup></div>
+<div>Fermi = 10<sup>-15</sup></div>
+</div>
+<div style="border-left: 1px dashed #006600; padding-left: 16px;">
+<div>Kilo = 10<sup>3</sup></div>
+<div>Mega = 10<sup>6</sup></div>
+<div>Giga = 10<sup>9</sup></div>
+</div>
+</div>
+</div>
+<!-- Caja 1 eV -->
+<div style="position: absolute; left: 39px; top: 389px; width: 326px; height: 155px; background-color: #ffffff; border: 1px solid #000000; border-radius: 4px; padding: 12px; font-size: 14px; line-height: 1.45; color: #000000; display: flex; align-items: center; text-align: justify; box-sizing: border-box;">
+<div><span style="color: #a50021; font-weight: bold;">1 eV</span> = energía cinética que adquiere un e, inicialmente en reposo, cuando se le somete a una <span style="color: #a50021; font-weight: bold;">diferencia de potencial de 1 voltio</span>.</div>
+</div>
+<!-- Tabla Energía -->
+<table style="position: absolute; left: 381px; top: 396px; width: 464px; border-collapse: collapse; font-size: 12.5px; border: 1px solid #000000;">
+<tr style="background-color: #bbe0e3; font-weight: bold; text-align: center;"><th colspan="3" style="border: 1px solid #000000; padding: 3px 6px;">Energía</th></tr>
+<tr style="background-color: #ffffff;"><td style="border: 1px solid #000000; padding: 3px 6px;">Electronvoltio</td><td style="border: 1px solid #000000; padding: 3px 6px; text-align: center;">eV</td><td style="border: 1px solid #000000; padding: 3px 6px;"></td></tr>
+<tr style="background-color: #ffffff;"><td style="border: 1px solid #000000; padding: 3px 6px;">Kiloelectronvoltio</td><td style="border: 1px solid #000000; padding: 3px 6px; text-align: center;">KeV</td><td style="border: 1px solid #000000; padding: 3px 6px; text-align: center;">1000 eV = 10<sup>3</sup> eV</td></tr>
+<tr style="background-color: #ffffff;"><td style="border: 1px solid #000000; padding: 3px 6px;">Megaelectronvoltio</td><td style="border: 1px solid #000000; padding: 3px 6px; text-align: center;">MeV</td><td style="border: 1px solid #000000; padding: 3px 6px; text-align: center;">1000000 eV = 10<sup>6</sup> eV</td></tr>
+<tr style="background-color: #ffffff;"><td style="border: 1px solid #000000; padding: 3px 6px;">Gigaelectrovoltio</td><td style="border: 1px solid #000000; padding: 3px 6px; text-align: center;">GeV</td><td style="border: 1px solid #000000; padding: 3px 6px; text-align: center;">1000000000 eV = 10<sup>9</sup> eV</td></tr>
+</table>
+<!-- Bottom ecuación -->
+<div style="position: absolute; left: 54px; top: 565px; font-size: 15px; font-weight: bold; color: #000000;">Podemos expresar la masa con unidades de energía empleando las ecuación de Einstein: <span style="color: #a50021;">E = m c<sup>2</sup></span> donde c = 3 x 10<sup>8</sup> m/s.</div>
+<div class="footer-line"></div>
+<img alt="SACYL" class="footer-logo" src="assets/parte1_10000000000000EF00000098E388084E.jpg"/>
+</section>
+<section class="parte1 p1-slide" style="width:960px;height:700px;background-color:#ffffff;overflow:hidden;">
+<div class="header-banner">RADIACIÓN ELECTROMAGNÉTICA</div>
+<div style="position: absolute; left: 88px; top: 76px; width: 788px; height: 35px; border: 1px dashed #006600; border-radius: 4px; display: flex; align-items: center; padding-left: 14px; font-size: 16px; font-weight: bold; color: #000000; box-sizing: border-box;"><span style="color: #a50021;">Radiación EM:</span> <span style="color: #333399;">propagación de energía sin el soporte de un medio material.</span></div>
+<img alt="Onda electromagnética" src="assets/parte1_slide12_onda_em.png" style="position: absolute; left: 45px; top: 122px; width: 380px; height: 265px; object-fit: contain;"/>
+<div style="position: absolute; left: 445px; top: 122px; width: 460px; font-size: 15.5px; line-height: 1.35; color: #333399; text-align: justify;">Está formada por dos campos, <span style="color: #a50021; font-weight: bold;">eléctrico (E)</span> y <span style="color: #a50021; font-weight: bold;">magnético (B)</span>, que se encuentran en fase y cuyos planos de propagación son perpendiculares.</div>
+<img alt="Longitud de onda" src="assets/parte1_slide12_ondas.png" style="position: absolute; left: 445px; top: 204px; width: 460px; height: 185px; object-fit: contain; border: 2px solid #006600; border-radius: 6px; box-sizing: border-box;"/>
+<div style="position: absolute; left: 45px; top: 398px; width: 380px; font-size: 14.5px; line-height: 1.3; color: #333399;">La velocidad de propagación en el vacío de las ondas EM es constante: <span style="color: #a50021; font-weight: bold;">c = 3 x 10<sup>8</sup> m/s</span></div>
+<div style="position: absolute; left: 45px; top: 460px; width: 380px; font-size: 14.5px; line-height: 1.3; color: #333399; text-align: center;">
+<div>Para todas las ondas EM se cumple la relación:</div>
+<div style="font-weight: bold; font-size: 18px; margin-top: 4px; color: #a50021;">c = ν λ</div>
+</div>
+<div style="position: absolute; left: 445px; top: 405px; width: 460px; font-size: 15.5px; font-weight: bold; color: #333399;">Todas las ondas se caracterizan por: <span style="color: #a50021;">λ</span> y <span style="color: #a50021;">ν</span></div>
+<div style="position: absolute; left: 445px; top: 445px; width: 460px; font-size: 14.5px; color: #000000;"><span style="font-weight: bold;">λ</span> = <span style="color: #a50021; font-weight: bold;">longitud de onda</span>= distancia entre dos puntos de la misma fase.</div>
+<div style="position: absolute; left: 445px; top: 485px; width: 460px; font-size: 14.5px; color: #000000;"><span style="font-weight: bold;">ν</span> = <span style="color: #a50021; font-weight: bold;">frecuencia</span>= número de oscilaciones por segundo</div>
+<div class="footer-line"></div>
+<img alt="SACYL" class="footer-logo" src="assets/parte1_10000000000000EF00000098E388084E.jpg"/>
+</section>
+<section class="parte1 p1-slide" style="width:960px;height:700px;background-color:#ffffff;overflow:hidden;">
+<div class="header-banner">ESPECTRO ELECTROMAGNÉTICO</div>
+<div style="position: absolute; left: 35px; top: 105px; width: 280px; height: 395px; background-color: #eeece1; border: 1px solid #000000; border-radius: 4px; padding: 18px 14px; box-sizing: border-box; font-size: 14.5px; line-height: 1.5; color: #000000;">
+<div style="font-weight: bold; margin-bottom: 16px;">Órdenes de magnitud de la <span style="color: #ff6600;">energía</span> que transportan los <span style="color: #ff3300;">fotones:</span></div>
+<div style="margin-bottom: 12px;">• Microondas: 0,0001-0,01 eV</div>
+<div style="margin-bottom: 12px;">• Luz visible: 1 eV</div>
+<div style="margin-bottom: 12px;">• Rayos X: 1.000-100.000 eV</div>
+<div>• Rayos gamma: 10.000-1.000.000 eV</div>
+</div>
+<img alt="Espectro electromagnético" src="assets/parte1_slide13_espectro.png" style="position: absolute; left: 325px; top: 72px; width: 615px; height: 485px; object-fit: contain;"/>
+<div style="position: absolute; left: 35px; top: 560px; width: 890px; height: 50px; font-size: 16px; font-weight: bold; line-height: 1.35; color: #000000; text-align: justify; display: flex; align-items: center;">
+<span>La radiación X y gamma posee suficiente energía como para <span style="color: #006600;">“arrancar” electrones</span> a los átomos del medio de forma significativa: <span style="color: #ff0000;">radiaciones ionizantes</span></span>
+</div>
+<div class="footer-line"></div>
+<img alt="SACYL" class="footer-logo" src="assets/parte1_10000000000000EF00000098E388084E.jpg"/>
+</section>
+<section class="parte1 p1-slide" style="width:960px;height:700px;background-color:#ffffff;overflow:hidden;">
+<div class="header-banner">EL FOTÓN</div>
+<div style="position: absolute; left: 58px; top: 82px; width: 844px; height: 115px; border: 1px solid #008000; border-radius: 0; padding: 10px 18px; box-sizing: border-box; font-size: 16.5px; line-height: 1.4; color: #333399;">
+<div style="margin-bottom: 8px;">Los fenómenos físicos asociados a la Radiación EM sólo se pueden explicar si se le asocia una <u>dualidad</u> en el comportamiento:</div>
+<div style="margin-left: 20px; font-weight: bold; color: #a50021;">❖ Onda</div>
+<div style="margin-left: 20px; font-weight: bold; color: #a50021;">❖ Partícula o corpúsculo = FOTÓN</div>
+</div>
+<div style="position: absolute; left: 58px; top: 212px; width: 844px; height: 125px; border: 1px solid #008000; border-radius: 0; padding: 10px 18px; box-sizing: border-box; font-size: 16.5px; line-height: 1.4; color: #333399;">
+<div><span style="color: #a50021; font-weight: bold;">Fotón:</span> corpúsculo de energía sin soporte material, equivalente a una energía cinética:</div>
+<div style="display: flex; justify-content: center; margin: 6px 0;"><span style="border: 2px solid #008000; border-radius: 4px; padding: 2px 20px; font-size: 18px; font-weight: bold; color: #a50021;">E = h · ν = h · c/λ</span></div>
+<div style="text-align: right; font-size: 15px; color: #333399;">donde h = 6,62 · 10<sup>-34</sup> J·s. (Cte de Planck)</div>
+</div>
+<div style="position: absolute; left: 58px; top: 352px; width: 844px; height: 135px; border: 1px solid #008000; border-radius: 0; padding: 16px 20px; box-sizing: border-box; font-size: 17px; line-height: 1.5; color: #333399;">
+<div style="margin-bottom: 12px;"><span style="color: #003300;">❖</span> El <span style="color: #333399; text-decoration: underline;">carácter ondulatorio</span> explica los fenómenos de <span style="color: #a50021; font-weight: bold;">interferencia, difracción y refracción.</span></div>
+<div><span style="color: #003300;">❖</span> El <span style="color: #333399; text-decoration: underline;">carácter corpuscular</span> explica los fenómenos de <span style="color: #a50021; font-weight: bold;">interacción con la materia.</span></div>
+</div>
+<img alt="Espectro visible" src="assets/parte1_10000000000002ED00000025E682EADA.jpg" style="position: absolute; left: 75px; top: 515px; width: 810px; height: 46px; object-fit: contain;"/>
+<div class="footer-line"></div>
+<img alt="SACYL" class="footer-logo" src="assets/parte1_10000000000000EF00000098E388084E.jpg"/>
+</section>
+<section class="parte1 p1-slide" style="width:960px;height:700px;background-color:#ffffff;overflow:hidden;">
+<div class="header-banner">RESUMEN</div>
+<div style="position: absolute; left: 60px; top: 220px; width: 840px; font-size: 30px; line-height: 2.4; color: #000000;">
+<div style="display: flex; align-items: center;"><span style="margin-right: 14px;">●</span><span>Niveles: Sustancia→Molécula→Átomo→Núcleo-&gt;Partícula</span></div>
+<div style="display: flex; align-items: center;"><span style="margin-right: 14px;">●</span><span>Radiación electromagnética-&gt;Fotones</span></div>
+</div>
+<div class="footer-line"></div>
+<img alt="SACYL" class="footer-logo" src="assets/parte1_10000000000000EF00000098E388084E.jpg"/>
+</section>
+<section class="parte2 p2-slide" style="width:960px;height:700px;background-color:#ffffff;overflow:hidden;">
+<div style="position: absolute; top: 195px; left: 48px; width: 864px; text-align: center;">
+<h1 style="font-size: 42px; font-weight: normal; color: #000000; margin: 0 0 18px 0; letter-spacing: 0.5px;">ESTRUCTURA ATÓMICA</h1>
+<h2 style="font-size: 38px; font-weight: normal; color: #000000; margin: 0; letter-spacing: 0.5px;">PROCESOS A NIVEL ATÓMICO</h2>
+</div>
+<div class="sacyl-footer-line"></div>
+<img alt="Sacyl" class="sacyl-logo" src="assets/parte2_10000000000000EF00000098E388084E.jpg"/>
+</section>
+<section class="parte2 p2-slide" style="width:960px;height:700px;background-color:#ffffff;overflow:hidden;">
+<div class="slide-header">
+<h2>ESTRUCTURA DEL ÁTOMO</h2>
+</div>
+<img alt="Estructura del átomo" src="assets/parte2_slide02_atom_diagram.png" style="position: absolute; top: 160px; left: 25px; width: 440px; height: 390px; object-fit: contain;"/>
+<div style="position: absolute; top: 185px; left: 480px; width: 460px; text-align: center;">
+<h3 style="font-size: 24px; font-weight: normal; color: #000000; margin: 0;">Tamaño relativo núcleo-átomo</h3>
+</div>
+<img alt="Campo de fútbol" src="assets/parte2_slide02_soccer_field.png" style="position: absolute; top: 230px; left: 535px; width: 350px; height: 280px; object-fit: contain;"/>
+<div style="position: absolute; top: 542px; left: 480px; width: 460px; text-align: center; font-size: 21px; font-weight: bold; color: #990000; line-height: 1.25;">
+          ¡¡Guisante en un<br/>campo de fútbol!!
+        </div>
+<div style="position: absolute; top: 580px; left: 48px; width: 864px; font-size: 19px; color: #000000; text-align: left; line-height: 1.35;">
+          Corteza electrónica: electrones girando alrededor del núcleo
+        </div>
+<div class="sacyl-footer-line"></div>
+<img alt="Sacyl" class="sacyl-logo" src="assets/parte2_10000000000000EF00000098E388084E.jpg"/>
+</section>
+<section class="parte2 p2-slide" style="width:960px;height:700px;background-color:#ffffff;overflow:hidden;">
+<div class="slide-header">
+<h2>LA CORTEZA ELECTRÓNICA</h2>
+</div>
+<div style="position: absolute; top: 125px; left: 48px; width: 864px; text-align: left;">
+<ul style="font-size: 23px; line-height: 1.55; color: #000000; margin: 0; padding-left: 32px; list-style-type: disc;">
+<li style="margin-bottom: 24px;">
+<b>Modelo de Bohr:</b> Representamos el átomo con los electrones girando alrededor del núcleo (similar a los planetas girando alrededor del sol)
+            </li>
+<li style="margin-bottom: 24px;">
+              Las energías que pueden tener los electrones en la órbita adoptan valores discretos
+            </li>
+<li style="margin-bottom: 24px;">
+              En realidad modelo real es un poco más complejo (modelo mecánico-cuántico, distribuciones de probabilidad, orbitales)
+            </li>
+</ul>
+</div>
+<div class="sacyl-footer-line"></div>
+<img alt="Sacyl" class="sacyl-logo" src="assets/parte2_10000000000000EF00000098E388084E.jpg"/>
+</section>
+<section class="parte2 p2-slide" style="width:960px;height:700px;background-color:#ffffff;overflow:hidden;">
+<div class="slide-header">
+<h2>CORTEZA ELECTRÓNICA: ESTADOS ATÓMICOS (I)</h2>
+</div>
+<div style="position: absolute; top: 85px; left: 58px; width: 844px; font-size: 19px; line-height: 1.45; color: #000000; text-align: left;">
+<div style="font-weight: bold; margin-bottom: 4px;">CONDICIONES NORMALES:</div>
+<div style="margin-bottom: 4px;">Átomo <b>eléctricamente neutro</b>: nº <span style="color: #006600;">electrones</span> = nº <span style="color: #990000;">protones</span></div>
+<div>Estado fundamental del átomo: los <span style="color: #006600; font-weight: bold;">e<sup>-</sup></span> están ocupando los niveles de menor energía posible</div>
+</div>
+<img alt="Tabla de electrones por capa" src="assets/parte2_slide04_table.png" style="position: absolute; top: 165px; left: 198px; width: 470px; height: 430px; object-fit: contain;"/>
+<div class="sacyl-footer-line"></div>
+<img alt="Sacyl" class="sacyl-logo" src="assets/parte2_10000000000000EF00000098E388084E.jpg"/>
+</section>
+<section class="parte2 p2-slide" style="width:960px;height:700px;background-color:#ffffff;overflow:hidden;">
+<div class="slide-header">
+<h2>CORTEZA ELECTRÓNICA: ESTADOS ATÓMICOS (II)</h2>
+</div>
+<div style="position: absolute; top: 105px; left: 59px; width: 500px; font-size: 21px; line-height: 1.45; color: #000000; text-align: left;">
+          La energía de ligadura de los electrones varía con el radio de la órbita en que se encuentren.<br/><br/>
+          Representación del átomo en su estado fundamental (Mínima energía)
+        </div>
+<img alt="Órbitas K, L, M" src="assets/parte2_slide05_bohr_klm.png" style="position: absolute; top: 110px; left: 597px; width: 250px; height: 250px; object-fit: contain;"/>
+<img alt="Salto de electrones" src="assets/parte2_slide05_jump.png" style="position: absolute; top: 375px; left: 45px; width: 220px; height: 225px; object-fit: contain;"/>
+<div style="position: absolute; top: 430px; left: 290px; width: 620px; font-size: 21px; line-height: 1.45; color: #000000; text-align: left;">
+          Si los electrones tienen energía suficientes pasan a órbitas más alejadas del núcleo
+        </div>
+<div class="sacyl-footer-line"></div>
+<img alt="Sacyl" class="sacyl-logo" src="assets/parte2_10000000000000EF00000098E388084E.jpg"/>
+</section>
+<section class="parte2 p2-slide" style="width:960px;height:700px;background-color:#ffffff;overflow:hidden;">
+<div class="slide-header">
+<h2>CORTEZA ELECTRÓNICA: EXCITACIÓN</h2>
+</div>
+<img alt="Excitación y desexcitación" src="assets/parte2_slide06_diagram.png" style="position: absolute; top: 85px; left: 45px; width: 870px; height: 355px; object-fit: contain;"/>
+<div style="position: absolute; top: 465px; left: 80px; width: 800px; background-color: #ffff99; padding: 14px 20px; box-sizing: border-box; border-radius: 4px; text-align: left;">
+<div style="font-size: 18px; line-height: 1.45; color: #000000;">
+<b>Átomo excitado:</b> alguno de los electrones corticales se encuentra en un estado energético superior al inicial<br/>
+            El átomo se desexcitará (en unos 10<sup>-8</sup> s) volviendo el electrón a la corteza, emitiendo un fotón de energía igual a la diferencia entre los dos niveles implicados en el salto
+          </div>
+</div>
+<div class="sacyl-footer-line"></div>
+<img alt="Sacyl" class="sacyl-logo" src="assets/parte2_10000000000000EF00000098E388084E.jpg"/>
+</section>
+<section class="parte2 p2-slide" style="width:960px;height:700px;background-color:#ffffff;overflow:hidden;">
+<div class="slide-header">
+<h2>EJ: TRANSICIONES EN EL ÁTOMO DE HIDRÓGENO</h2>
+</div>
+<img alt="Series espectrales del hidrógeno" src="assets/parte2_slide07_diagram.png" style="position: absolute; top: 95px; left: 160px; width: 640px; height: 510px; object-fit: contain;"/>
+<div class="sacyl-footer-line"></div>
+<img alt="Sacyl" class="sacyl-logo" src="assets/parte2_10000000000000EF00000098E388084E.jpg"/>
+</section>
+<section class="parte2 p2-slide" style="width:960px;height:700px;background-color:#ffffff;overflow:hidden;">
+<div class="slide-header">
+<h2>CORTEZA ELECTRÓNICA: IONIZACIÓN</h2>
+</div>
+<img alt="Ionización atómica" src="assets/parte2_slide08_diagram.png" style="position: absolute; top: 110px; left: 160px; width: 640px; height: 375px; object-fit: contain;"/>
+<div style="position: absolute; top: 495px; left: 70px; width: 820px; background-color: #ffff99; border: none; padding: 14px 20px; box-sizing: border-box; border-radius: 4px; text-align: left;">
+<div style="font-size: 19px; line-height: 1.45; color: #000000;">
+<b>Átomo ionizado:</b> un electrón adquiere energía suficiente (potencial de ionización) y se escapa del átomo. El átomo queda cargado positivamente.
+          </div>
+</div>
+<div class="sacyl-footer-line"></div>
+<img alt="Sacyl" class="sacyl-logo" src="assets/parte2_10000000000000EF00000098E388084E.jpg"/>
+</section>
+<section class="parte2 p2-slide" style="width:960px;height:700px;background-color:#ffffff;overflow:hidden;">
+<div class="slide-header">
+<h2>RESUMEN</h2>
+</div>
+<div style="position: absolute; top: 220px; left: 80px; width: 800px; text-align: left;">
+<ul style="font-size: 26px; line-height: 2.1; color: #000000; margin: 0; padding-left: 36px; list-style-type: disc;">
+<li>Estructura del átomo: Núcleo +Corteza</li>
+<li>Niveles y estados atómicos</li>
+<li>Procesos atómicos, excitación e ionización</li>
+</ul>
+</div>
+<div class="sacyl-footer-line"></div>
+<img alt="Sacyl" class="sacyl-logo" src="assets/parte2_10000000000000EF00000098E388084E.jpg"/>
+</section>
+<section class="parte2 p2-slide" style="width:960px;height:700px;background-color:#ffffff;overflow:hidden;">
+<div style="position: absolute; top: 180px; left: 48px; width: 864px; text-align: center;">
+<h1 style="font-size: 38px; font-weight: normal; color: #000000; margin: 0 0 16px 0; letter-spacing: 0.5px;">ESTRUCTURA NUCLEAR</h1>
+<h2 style="font-size: 36px; font-weight: normal; color: #000000; margin: 0 0 16px 0; letter-spacing: 0.5px;">PROCESOS A NIVEL NUCLEAR</h2>
+<h2 style="font-size: 36px; font-weight: normal; color: #000000; margin: 0; letter-spacing: 0.5px;">RADIACTIVIDAD Y REACCIONES<br/>NUCLEARES</h2>
+</div>
+<div class="sacyl-footer-line"></div>
+<img alt="Sacyl" class="sacyl-logo" src="assets/parte2_10000000000000EF00000098E388084E.jpg"/>
+</section>
+<section class="parte2 p2-slide" style="width:960px;height:700px;background-color:#ffffff;overflow:hidden;">
+<div class="slide-header">
+<h2>EL NÚCLEO ATÓMICO</h2>
+</div>
+<div style="position: absolute; top: 85px; left: 45px; width: 870px; text-align: left;">
+<ul style="font-size: 21px; line-height: 1.45; color: #000000; margin: 0; padding-left: 28px; list-style-type: disc;">
+<li style="margin-bottom: 8px;">Formado por <span style="color: #cc0000; font-weight: bold;">Z protones</span> y <span style="color: #0000cc; font-weight: bold;">A-Z=N neutrones</span>. Se denominan indistintamente como <span style="color: #008000; font-weight: bold;">nucleones</span></li>
+<li>Prácticamente toda la masa del átomo se encuentra en el núcleo</li>
+</ul>
+</div>
+<img alt="Esquema del núcleo atómico" src="assets/parte2_slide11_diagram.png" style="position: absolute; top: 180px; left: 45px; width: 870px; height: 420px; object-fit: contain;"/>
+<div class="sacyl-footer-line"></div>
+<img alt="Sacyl" class="sacyl-logo" src="assets/parte2_10000000000000EF00000098E388084E.jpg"/>
+</section>
+<section class="parte2 p2-slide" style="width:960px;height:700px;background-color:#ffffff;overflow:hidden;">
+<div class="slide-header">
+<h2>NOMENCLATURA NUCLEAR</h2>
+</div>
+<img alt="Notación nuclear X A Z" src="assets/parte2_slide12_notation.png" style="position: absolute; top: 80px; left: 45px; width: 210px; height: 155px; object-fit: contain;"/>
+<div style="position: absolute; top: 95px; left: 275px; width: 635px; font-size: 20px; line-height: 1.55; color: #000000; text-align: left;">
+          A= número másico = número de neutrones + número de protones.<br/>
+          Z= número atómico = número de protones = número de electrones.<br/>
+          X= Elemento químico
+        </div>
+<div style="position: absolute; top: 245px; left: 45px; width: 870px; font-size: 19px; line-height: 1.4; color: #000000; text-align: left;">
+<ul style="margin: 0; padding-left: 28px; list-style-type: disc;">
+<li style="margin-bottom: 6px;">Las propiedades del elemento químico están fijadas por Z</li>
+<li style="margin-bottom: 6px;">Átomos con el mismo Z y distinto A siguen siendo el mismo elemento. Se les conoce como <u>isótopos</u></li>
+<li style="margin-bottom: 6px;">Átomos con el mismo N (=A-Z) y distinto Z son átomos diferentes. Se les conoce como <u>isótonos</u>.</li>
+<li style="margin-bottom: 6px;">Átomos con el mismo A pero distinto N y distinto Z son distintos elementos. Se les conoce como <u>isóbaros</u>.</li>
+</ul>
+</div>
+<img alt="Isótopos del Hidrógeno" src="assets/parte2_slide12_isotopes.png" style="position: absolute; top: 465px; left: 45px; width: 870px; height: 145px; object-fit: contain;"/>
+<div class="sacyl-footer-line"></div>
+<img alt="Sacyl" class="sacyl-logo" src="assets/parte2_10000000000000EF00000098E388084E.jpg"/>
+</section>
+<section class="parte2 p2-slide" style="width:960px;height:700px;background-color:#ffffff;overflow:hidden;">
+<div class="slide-header">
+<h2>TABLA PERIÓDICA DE LOS ELEMENTOS</h2>
+</div>
+<span style="position: absolute; top: 70px; left: 40px; font-size: 17px; font-weight: bold; color: #800000;">ELEMENTO QUÍMICO:</span>
+<img alt="Tabla Periódica" src="assets/parte2_10000001000004B00000029FE15F846F.png" style="position: absolute; top: 92px; left: 1px; width: 958px; height: 520px;"/>
+<div class="sacyl-footer-line"></div>
+<img alt="Sacyl" class="sacyl-logo" src="assets/parte2_10000000000000EF00000098E388084E.jpg"/>
+</section>
+<section class="parte2 p2-slide" style="width:960px;height:700px;background-color:#ffffff;overflow:hidden;">
+<div class="slide-header">
+<h2>TABLA DE NUCLEIDOS</h2>
+</div>
+<div style="position: absolute; top: 155px; left: 45px; width: 465px; font-size: 21px; line-height: 1.5; color: #000000; text-align: left;">
+<ul style="margin: 0; padding-left: 28px; list-style-type: disc;">
+<li style="margin-bottom: 24px;">Conocemos 3600 núcleos diferentes. Solo 275 son estables (7%)</li>
+<li style="margin-bottom: 24px;">Elementos estables: No se desintegran, cuando aproximadamente #protones ~ #neutrones</li>
+<li>Elementos: 118; Naturales: 83</li>
+</ul>
+</div>
+<img alt="Tabla de Nucleidos" src="assets/parte2_100000010000022400000292103D6F50.png" style="position: absolute; top: 115px; left: 520px; width: 380px; height: 490px; object-fit: contain;"/>
+<div class="sacyl-footer-line"></div>
+<img alt="Sacyl" class="sacyl-logo" src="assets/parte2_10000000000000EF00000098E388084E.jpg"/>
+</section>
+<section class="parte2 p2-slide" style="width:960px;height:700px;background-color:#ffffff;overflow:hidden;">
+<div class="slide-header">
+<h2>ESTABILIDAD NUCLEAR</h2>
+</div>
+<div style="position: absolute; top: 125px; left: 56px; width: 550px; background-color: #ffff99; padding: 12px 18px; box-sizing: border-box; border-radius: 4px; text-align: left;">
+<div style="font-size: 19px; line-height: 1.45; color: #000000;">
+<b>Compensación:</b><br/>
+            * <span style="color: #990000; font-weight: bold;">FUERZAS REPULSIÓN</span> ++ (protones)<br/>
+            * FUERZAS NUCLEARES DE <span style="color: #cc3300; font-weight: bold;">ATRACCIÓN</span>
+</div>
+</div>
+<img alt="Fuerzas de repulsión y atracción" src="assets/parte2_slide15_diagram.png" style="position: absolute; top: 115px; left: 630px; width: 270px; height: 155px; object-fit: contain;"/>
+<div style="position: absolute; top: 275px; left: 56px; width: 848px; text-align: left;">
+<ul style="font-size: 21px; line-height: 1.5; color: #000000; margin: 0; padding-left: 28px; list-style-type: disc;">
+<li style="margin-bottom: 12px;">Los nucleones pueden existir en diversos estados de energía muy definidos.</li>
+<li>El estado que corresponde al nivel de energía más bajo es el estado fundamental</li>
+</ul>
+</div>
+<div style="position: absolute; top: 410px; left: 70px; width: 820px; background-color: #d7e4bd; padding: 14px 20px; box-sizing: border-box; border-radius: 4px; text-align: left;">
+<div style="font-size: 19px; line-height: 1.45; color: #000000;">
+<b>NÚCLEO INESTABLE:</b> emite partículas o radiación para alcanzar la estabilidad: <span style="color: #cc0000; font-weight: bold;">RADIACTIVIDAD.</span><br/>
+<span style="color: #8b0000; font-weight: bold;">Depende:</span> nº de nucleones y su estado de energía
+          </div>
+</div>
+<div class="sacyl-footer-line"></div>
+<img alt="Sacyl" class="sacyl-logo" src="assets/parte2_10000000000000EF00000098E388084E.jpg"/>
+</section>
+<section class="parte3 p3-slide" style="width:960px;height:700px;background-color:#ffffff;overflow:hidden;">
+<div class="master-header">ENERGÍA DE ENLACE NUCLEAR</div>
+<div class="master-footer-line"></div>
+<img alt="Sacyl" class="master-footer-logo" src="assets/parte3_10000000000000EF00000098E388084E.jpg"/>
+<!-- Subtítulo sin subrayado -->
+<div style="position:absolute;left:47px;top:105px;width:500px;font-size:19px;font-weight:bold;text-align:left;">
+          ENERGÍA DE ENLACE NUCLEAR:
+        </div>
+<!-- Párrafo 1 -->
+<div style="position:absolute;left:44px;top:145px;width:840px;font-size:17.5px;line-height:1.4;text-align:left;">
+          La <strong>masa del núcleo</strong> atómico es <span style="color:#800000;font-weight:bold;">menor</span> que la <strong>suma de las masas</strong> de sus componentes (<span style="color:#ff3300;">protones</span> + <span style="color:#000099;">neutrones</span>): <span style="color:#77933c;font-weight:bold;">defecto másico o energía de amarre</span>
+</div>
+<!-- Párrafo 2 -->
+<div style="position:absolute;left:44px;top:225px;width:840px;font-size:17.5px;line-height:1.4;text-align:left;">
+<strong>Energía</strong> necesaria para <strong>romper un núcleo</strong> en sus componentes separadamente ( <strong>Z</strong> protones y <strong>N</strong> neutrones):
+        </div>
+<!-- Párrafo 3 destacado -->
+<div style="position:absolute;left:44px;top:295px;width:550px;font-size:19px;font-weight:bold;text-align:left;">
+          ¡¡La diferencia de masa se transforma en energía!!
+        </div>
+<!-- Flecha diagonal roja hacia E = mc2 -->
+<img alt="-&gt;" src="assets/parte3_slide01_red_arrow.png" style="position:absolute;left:560px;top:300px;width:75px;height:35px;object-fit:contain;"/>
+<!-- E=mc2 Box con span para superíndice visible -->
+<div style="position:absolute;left:646px;top:280px;width:152px;height:55px;background-color:#c3d69b;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:bold;">
+<span>E = mc<sup>2</sup></span>
+</div>
+<!-- Ej Deuterio con span para superíndice visible -->
+<div style="position:absolute;left:87px;top:380px;width:247px;height:42px;background-color:#d7e4bd;border-radius:4px;display:flex;align-items:center;padding-left:14px;font-size:20px;font-weight:bold;text-align:left;">
+<span>Ej: Deuterio <sup>2</sup>H</span>
+</div>
+<!-- Deuterio nucleus diagram -->
+<img alt="Deuterio" src="assets/parte3_slide01_deuterio_nucleus.png" style="position:absolute;left:365px;top:370px;width:90px;height:60px;object-fit:contain;"/>
+<!-- Masa núcleo box -->
+<div style="position:absolute;left:39px;top:465px;width:315px;height:120px;border:1px solid #663300;background-color:#ffffff;padding:12px 14px;font-size:16px;line-height:1.55;box-sizing:border-box;text-align:left;">
+          Masa<sub>núcleo</sub>: 2,014102 u.a.m.<br/>
+          Masa<sub>protón</sub>: 1,007277 u.a.m.;<br/>
+          Masa<sub>neutrón</sub>: 1,008665 u.a.m.
+        </div>
+<!-- Flecha intermedia -->
+<img alt="=" src="assets/parte3_slide01_blue_arrow.png" style="position:absolute;left:362px;top:500px;width:45px;height:48px;object-fit:contain;"/>
+<!-- Cálculo box -->
+<div style="position:absolute;left:415px;top:470px;width:435px;height:108px;border:1px solid #663300;background-color:#ffffff;padding:12px 14px;font-size:16px;line-height:1.5;box-sizing:border-box;text-align:left;">
+          Masa<sub>núcleo</sub> – (Masa<sub>protón</sub> + Masa<sub>neutrón</sub>) =<br/>
+          =2,014102 - 2,016491 u.a.m. =<br/>
+          =- 0,002389 u.a.m. = <strong>-2,23 MeV</strong>
+</div>
+</section>
+<section class="parte3 p3-slide" style="width:960px;height:700px;background-color:#ffffff;overflow:hidden;">
+<div class="master-header">ENERGÍA DE ENLACE POR NUCLEÓN</div>
+<div class="master-footer-line"></div>
+<img alt="Sacyl" class="master-footer-logo" src="assets/parte3_10000000000000EF00000098E388084E.jpg"/>
+<!-- Curva con etiquetas -->
+<img alt="Curva de energía de enlace" src="assets/parte3_slide02_binding_curve.png" style="position:absolute;left:85px;top:95px;width:780px;height:450px;object-fit:contain;"/>
+<!-- Caja Números Mágicos (text-align: left) -->
+<div style="position:absolute;left:75px;top:555px;width:790px;height:58px;background-color:#d7e4bd;border-radius:4px;padding:8px 18px;font-size:14.5px;line-height:1.4;box-sizing:border-box;text-align:left;">
+<strong>Números mágicos</strong> (Z): confieren a los núcleos <strong>"mágicos"</strong> una gran estabilidad. (Ej:A= 4; A= 16, etc.)<br/>
+          Para Z muy alto: ISLA DE ESTABILIDAD
+        </div>
+</section>
+<section class="parte3 p3-slide" style="width:960px;height:700px;background-color:#ffffff;overflow:hidden;">
+<div class="master-header">RADIOACTIVIDAD</div>
+<div class="master-footer-line"></div>
+<img alt="Sacyl" class="master-footer-logo" src="assets/parte3_10000000000000EF00000098E388084E.jpg"/>
+<!-- Caja superior (text-align: left) -->
+<div style="position:absolute;left:48px;top:105px;width:820px;height:75px;background-color:#eeece1;border-radius:4px;padding:10px 18px;font-size:16px;line-height:1.4;color:#003300;box-sizing:border-box;text-align:left;">
+          Emisión espontánea de partículas o radiación por núcleos atómicos inestables. &gt;&gt; el núcleo se transforma dando lugar a otro núcleo estable o inestable.<br/>
+<strong>UN NÚCLEO PUEDE SER INESTABLE POR:</strong>
+</div>
+<!-- Diagrama de núcleos -->
+<img alt="Inestabilidad nuclear" src="assets/parte3_slide03_diagram.png" style="position:absolute;left:48px;top:198px;width:415px;height:180px;object-fit:contain;"/>
+<!-- Caja Desequilibrio (text-align: left) -->
+<div style="position:absolute;left:485px;top:205px;width:380px;height:65px;border:1px solid #6d28a6;border-radius:6px;padding:10px 18px;font-size:16px;line-height:1.35;box-sizing:border-box;text-align:left;">
+          Desequilibrio entre sus componentes<br/>
+<strong>(PROTONES y NEUTRONES)</strong>
+</div>
+<!-- Caja Exceso de ENERGÍA (con espacio correcto) -->
+<div style="position:absolute;left:485px;top:305px;width:380px;height:45px;border:1px solid #6d28a6;border-radius:6px;padding:8px 18px;font-size:18px;display:flex;align-items:center;box-sizing:border-box;text-align:left;">
+          Exceso de ENERGÍA
+        </div>
+<!-- Caja inferior (text-align: left) -->
+<div style="position:absolute;left:48px;top:405px;width:820px;height:150px;background-color:#eeece1;border-radius:4px;padding:14px 20px;font-size:16px;line-height:1.5;color:#003300;box-sizing:border-box;text-align:left;">
+          • <strong>RADIACTIVIDAD NATURAL:</strong> propia de los cuerpos tal y como aparecen en la naturaleza. Uranio (<sup>232</sup>U), Carbono-14 (<sup>14</sup>C), Potasio-40 (<sup>40</sup>K)<br/><br/>
+          • <strong>RADIACTIVIDAD ARTIFICIAL:</strong> núcleos que han alcanzado la inestabilidad mediante el bombardeo con partículas
+        </div>
+</section>
+<section class="parte3 p3-slide" style="width:960px;height:700px;background-color:#ffffff;overflow:hidden;">
+<div class="master-header">ACTIVIDAD</div>
+<div class="master-footer-line"></div>
+<img alt="Sacyl" class="master-footer-logo" src="assets/parte3_10000000000000EF00000098E388084E.jpg"/>
+<!-- Subtítulo superior -->
+<div style="position:absolute;left:44px;top:95px;width:860px;text-align:center;font-size:17.5px;">
+          nº de transformaciones nucleares por unidad de tiempo (Bequerelio=Bq= nº transformaciones/s)
+        </div>
+<!-- Caja A = N lambda -->
+<div style="position:absolute;left:80px;top:150px;width:190px;height:55px;background-color:#ffcccc;border:1px solid #000000;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:bold;">
+          A = N · λ
+        </div>
+<!-- Flecha horizontal de transición vector limpia (→) -->
+<div style="position:absolute;left:280px;top:156px;width:105px;text-align:center;font-size:26px;font-weight:bold;color:#000000;">
+          →
+        </div>
+<!-- Caja definición lambda (text-align: left) -->
+<div style="position:absolute;left:395px;top:135px;width:460px;height:95px;background-color:#ffcccc;border:1px solid #000000;border-radius:4px;padding:12px 18px;font-size:16px;line-height:1.45;box-sizing:border-box;text-align:left;">
+          λ = probabilidad de que un átomo se desintegre por unidad de tiempo;<br/>
+          N = nº átomos
+        </div>
+<!-- Subtítulo Comportamiento exponencial -->
+<div style="position:absolute;left:80px;top:250px;width:350px;font-size:18px;font-weight:bold;text-align:left;">
+          Comportamiento exponencial
+        </div>
+<!-- Caja Ley de decaimiento -->
+<div style="position:absolute;left:535px;top:245px;width:290px;height:55px;background-color:#ccff99;border:1px solid #000000;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:bold;">
+<span>A = A<sub>0</sub> e<sup>-(λ·t)</sup></span>
+</div>
+<!-- Gráfico curva decaimiento -->
+<img alt="Curva exponencial" src="assets/parte3_100000010000019E000000FA47DCA252.png" style="position:absolute;left:57px;top:315px;width:450px;height:270px;object-fit:contain;"/>
+<!-- Grid de átomos decayendo (limpio de borde superior) -->
+<img alt="Decaimiento en el tiempo" src="assets/parte3_slide04_decay_grid.png" style="position:absolute;left:530px;top:325px;width:380px;height:260px;object-fit:contain;"/>
+</section>
+<section class="parte3 p3-slide" style="width:960px;height:700px;background-color:#ffffff;overflow:hidden;">
+<div class="master-header">DESINTEGRACIÓN RADIACTIVA</div>
+<div class="master-footer-line"></div>
+<img alt="Sacyl" class="master-footer-logo" src="assets/parte3_10000000000000EF00000098E388084E.jpg"/>
+<!-- Cartel 1 -->
+<div style="position:absolute;left:88px;top:85px;width:625px;height:35px;background-color:#ffffcc;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:16.5px;font-weight:bold;">
+          Las sustancias radiactivas se transforman en estables
+        </div>
+<!-- Cartel 2 -->
+<div style="position:absolute;left:51px;top:130px;width:740px;height:38px;background-color:#dddddd;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:bold;letter-spacing:0.5px;">
+          CADA radionucleido SE CARACTERIZA POR SU PERIODO DE SEMIDESINTEGRACIÓN
+        </div>
+<!-- Foto izquierda -->
+<img alt="Curie" src="assets/parte3_100000000000010A000001CB640C7C31.jpg" style="position:absolute;left:37px;top:185px;width:258px;height:410px;object-fit:contain;"/>
+<!-- Gráfico curva semivida -->
+<img alt="Curva semidesintegración" src="assets/parte3_100000000000039800000335E82E4B22.png" style="position:absolute;left:328px;top:185px;width:450px;height:320px;object-fit:contain;"/>
+<!-- Caja explicativa (negrita, text-align: left) -->
+<div style="position:absolute;left:450px;top:235px;width:430px;height:75px;border:1px solid #6d28a6;background-color:rgba(255,255,255,0.95);border-radius:4px;padding:8px 14px;font-size:15px;line-height:1.35;box-sizing:border-box;text-align:left;font-weight:bold;">
+          El número inicial de átomos radiactivos se reduce a la mitad a cada paso de un tiempo T (período de semidesintegración)
+        </div>
+<!-- Caja fórmula T1/2 -->
+<div style="position:absolute;left:650px;top:365px;width:175px;height:40px;background-color:#ffffcc;border:1px solid #000000;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:bold;">
+<span>T<sub>1/2</sub> = ln( 2)/ λ</span>
+</div>
+<!-- Caja Periodo Semidesintegración: fondo blanco, borde 3px negro, text-align: left -->
+<div style="position:absolute;left:335px;top:525px;width:580px;height:70px;background-color:#ffffff;border:3px solid #000000;border-radius:4px;padding:8px 16px;font-size:14px;line-height:1.35;box-sizing:border-box;text-align:left;">
+<strong style="text-decoration:underline;">PERIODO DE SEMIDESINTEGRACIÓN:</strong><br/>
+          Ritmo de desintegración: tiempo que ha de transcurrir para que la actividad de la muestra decaiga a la mitad
+        </div>
+</section>
+<section class="parte3 p3-slide" style="width:960px;height:700px;background-color:#ffffff;overflow:hidden;">
+<div class="master-header">TIPOS DE DESINTEGRACIONES (I)</div>
+<div class="master-footer-line"></div>
+<img alt="Sacyl" class="master-footer-logo" src="assets/parte3_10000000000000EF00000098E388084E.jpg"/>
+<!-- Subtítulos coloreados -->
+<div style="position:absolute;left:34px;top:105px;font-size:20px;font-weight:bold;color:#a61c1c;text-align:left;">
+          1) DESINTEGRACIÓN ALFA
+        </div>
+<div style="position:absolute;left:415px;top:107px;font-size:18px;font-weight:bold;color:#1f497d;text-align:left;">
+          α: NÚCLEOS DE HELIO
+        </div>
+<img alt="Partícula alfa" src="assets/parte3_slide06_alpha_particle.png" style="position:absolute;left:670px;top:95px;width:70px;height:55px;object-fit:contain;"/>
+<!-- Párrafos acotados a 620px y text-align: left -->
+<div style="position:absolute;left:34px;top:150px;width:620px;font-size:16px;line-height:1.4;text-align:left;">
+<strong>POCO PENETRANTES:</strong> una hoja de papel o unos centímetros en aire la frenan<br/>
+<div style="margin-left:20px;margin-top:4px;">
+            - Depositan toda su energía en un recorrido muy corto.<br/>
+            - Propias en la desintegración de núcleos pesados.<br/>
+            - Suelen ir acompañadas de desintegración gamma
+          </div>
+</div>
+<!-- Diagrama penetración alfa -->
+<img alt="Penetración alfa" src="assets/parte3_slide06_alpha_diagram.png" style="position:absolute;left:44px;top:315px;width:410px;height:270px;object-fit:contain;"/>
+<!-- Caja amarilla con isótopos -->
+<div style="position:absolute;left:457px;top:315px;width:385px;height:270px;background-color:#ffffcc;border:1px solid #000000;border-radius:4px;padding:25px 35px;box-sizing:border-box;font-size:19px;line-height:2.2;text-align:left;">
+<sup>235</sup>U     (Uranio)<br/>
+<sup>241</sup>Am   (Americio)<br/>
+<sup>226</sup>Ra     (Radio)<br/>
+<sup>222</sup>Rn     (Radón)
+        </div>
+</section>
+<section class="parte3 p3-slide" style="width:960px;height:700px;background-color:#ffffff;overflow:hidden;">
+<div class="master-header">TIPOS DE DESINTEGRACIONES (II)</div>
+<div class="master-footer-line"></div>
+<img alt="Sacyl" class="master-footer-logo" src="assets/parte3_10000000000000EF00000098E388084E.jpg"/>
+<!-- Subtítulos coloreados -->
+<div style="position:absolute;left:36px;top:105px;font-size:20px;font-weight:bold;color:#c00000;text-align:left;">
+          1) DESINTEGRACIÓN BETA
+        </div>
+<div style="position:absolute;left:450px;top:105px;font-size:17px;font-weight:bold;line-height:1.4;color:#c0504d;text-align:left;">
+          β<sup>-</sup> : ELECTRONES<br/>
+          β<sup>+</sup> : POSITRONES
+        </div>
+<!-- Esferas circulares completas con gradiente radial CSS exacto -->
+<div style="position:absolute;left:645px;top:103px;width:22px;height:22px;border-radius:50%;background:radial-gradient(circle at 35% 35%, #9aff70, #5be52e 60%, #378a1c 100%);box-shadow: 0 1px 3px rgba(0,0,0,0.3);"></div>
+<div style="position:absolute;left:645px;top:127px;width:22px;height:22px;border-radius:50%;background:radial-gradient(circle at 35% 35%, #ff7070, #e10000 60%, #8a0000 100%);box-shadow: 0 1px 3px rgba(0,0,0,0.3);"></div>
+<!-- Párrafos (text-align: left) -->
+<div style="position:absolute;left:36px;top:165px;width:820px;font-size:16px;line-height:1.4;text-align:left;">
+<strong>MÁS PENETRANTE:</strong> una lámina de aluminio o unos metros en aire la frenan<br/>
+<div style="margin-left:20px;margin-top:4px;">
+            - Depositan su energía en un recorrido más largo.<br/>
+            - Se producen en núcleos con exceso de neutrones (β<sup>-</sup> ) o de protones (β<sup>+</sup> )<br/>
+            - Suelen ir acompañadas de desintegración gamma
+          </div>
+</div>
+<!-- Diagrama penetración beta -->
+<img alt="Penetración beta" src="assets/parte3_slide07_beta_diagram.png" style="position:absolute;left:43px;top:285px;width:410px;height:320px;object-fit:contain;"/>
+<!-- Caja amarilla con isótopos -->
+<div style="position:absolute;left:457px;top:285px;width:385px;height:320px;background-color:#ffffcc;border:1px solid #000000;border-radius:4px;padding:12px 30px;box-sizing:border-box;font-size:16.5px;line-height:1.45;text-align:left;">
+<sup>137</sup>Cs     (Cesio)<br/>
+<sup>60</sup>Co     (Cobalto)<br/>
+<sup>14</sup>C       (Carbono)<br/>
+<sup>32</sup>P       (Fósforo)<br/>
+<sup>3</sup>H        (Tritio)<br/>
+<hr style="border:0;border-top:1px solid #000000;margin:6px 0;"/>
+<sup>22</sup>Na     (Sodio)<br/>
+<sup>11</sup>C       (Carbono)<br/>
+<sup>15</sup>O       (Oxígeno)<br/>
+<sup>13</sup>N       (Nitrógeno)
+        </div>
+</section>
+<section class="parte3 p3-slide" style="width:960px;height:700px;background-color:#ffffff;overflow:hidden;">
+<div class="master-header">TIPOS DE DESINTEGRACIONES (III)</div>
+<div class="master-footer-line"></div>
+<img alt="Sacyl" class="master-footer-logo" src="assets/parte3_10000000000000EF00000098E388084E.jpg"/>
+<!-- Subtítulos coloreados -->
+<div style="position:absolute;left:34px;top:95px;font-size:20px;font-weight:bold;color:#a61c1c;text-align:left;">
+          1) DESINTEGRACIÓN GAMMA:
+        </div>
+<div style="position:absolute;left:430px;top:98px;font-size:18px;font-weight:bold;text-align:left;">
+          ENERGÍA (ondas electromagnéticas)
+        </div>
+<!-- Onda senoidal amarilla ondulada a top: 130px sin colisión -->
+<img alt="Onda gamma" src="assets/parte3_slide08_gamma_wave.png" style="position:absolute;left:210px;top:130px;width:420px;height:20px;object-fit:contain;"/>
+<!-- Párrafos desplazados a top: 185px para dejar amplio margen -->
+<div style="position:absolute;left:25px;top:185px;width:860px;font-size:16px;line-height:1.4;text-align:left;">
+<strong>MUY PENETRANTE :</strong> requiere materiales densos y pesados (una lámina de plomo, hormigón, etc.) para ser absorbidos.<br/><br/>
+          Un núcleo con un exceso de energía puede de forma espontánea emitir radiación gamma.
+        </div>
+<!-- Diagrama penetración gamma (re-recortado limpio) -->
+<img alt="Penetración gamma" src="assets/parte3_slide08_gamma_diagram.png" style="position:absolute;left:44px;top:315px;width:410px;height:270px;object-fit:contain;"/>
+<!-- Caja amarilla con isótopos con -(beta-) en verde -->
+<div style="position:absolute;left:457px;top:315px;width:385px;height:270px;background-color:#ffffcc;border:1px solid #000000;border-radius:4px;padding:30px 25px;box-sizing:border-box;font-size:18px;line-height:2.2;text-align:left;">
+<sup>137</sup>Cs (Cesio) <span style="color:#008000;font-weight:bold;">– (β-)</span> ➔ Ba-137<br/>
+<sup>60</sup>Co (Cobalto) <span style="color:#008000;font-weight:bold;">– (β-)</span> ➔ Ni –60<br/>
+<sup>99m</sup>Tc(Tecnecio)
+        </div>
+</section>
+<section class="parte3 p3-slide" style="width:960px;height:700px;background-color:#ffffff;overflow:hidden;">
+<div class="master-header">LA RADIACIÓN NATURAL</div>
+<div class="master-footer-line"></div>
+<img alt="Sacyl" class="master-footer-logo" src="assets/parte3_10000000000000EF00000098E388084E.jpg"/>
+<!-- Tabla estructurada con encabezados de sección centrados y marrones -->
+<div style="position:absolute;left:89px;top:115px;width:780px;">
+<table class="natural-radiation">
+<thead>
+<tr>
+<th style="width:55%;">Radionucleidos Naturales</th>
+<th style="width:45%;">Período de semidesintegración</th>
+</tr>
+</thead>
+<tbody>
+<tr class="subhead">
+<td colspan="2" style="background-color:#d0d8e7;color:#984807;text-align:center;font-weight:bold;padding:6px 16px;">Cosmogénicos</td>
+</tr>
+<tr>
+<td class="indent" style="background-color:#e9ecf3;">Hidrógeno-3</td>
+<td style="background-color:#e9ecf3;">12.3 años</td>
+</tr>
+<tr>
+<td class="indent" style="background-color:#d0d8e7;">Carbono-14</td>
+<td style="background-color:#d0d8e7;">5.7 x10<sup>3</sup> años</td>
+</tr>
+<tr>
+<td class="indent" style="background-color:#e9ecf3;">Sodio-22</td>
+<td style="background-color:#e9ecf3;">2.6 años</td>
+</tr>
+<tr class="subhead">
+<td colspan="2" style="background-color:#ffffff;color:#984807;text-align:center;font-weight:bold;padding:6px 16px;">Corteza terrestre</td>
+</tr>
+<tr>
+<td class="indent" style="background-color:#d0d8e7;">Potasio-40</td>
+<td style="background-color:#d0d8e7;">1.3 x 10<sup>9</sup> años</td>
+</tr>
+<tr>
+<td class="indent" style="background-color:#e9ecf3;">Serie Uranio-235</td>
+<td style="background-color:#e9ecf3;">7.0 x 10<sup>8</sup> años</td>
+</tr>
+<tr>
+<td class="indent" style="background-color:#d0d8e7;">Serie Uranio-238</td>
+<td style="background-color:#d0d8e7;">4.5 x 10<sup>9</sup> años</td>
+</tr>
+<tr>
+<td class="indent" style="background-color:#e9ecf3;">Serie Torio-232</td>
+<td style="background-color:#e9ecf3;">1.4 x 10<sup>10</sup> años</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="parte3 p3-slide" style="width:960px;height:700px;background-color:#ffffff;overflow:hidden;">
+<div class="master-header">REACCIONES NUCLEARES</div>
+<div class="master-footer-line"></div>
+<img alt="Sacyl" class="master-footer-logo" src="assets/parte3_10000000000000EF00000098E388084E.jpg"/>
+<!-- Texto 1 con ¡RADIACTIVIDAD ARTIFICIAL! en rojo oscuro -->
+<div style="position:absolute;left:70px;top:115px;width:820px;font-size:18px;line-height:1.4;text-align:left;">
+          Bombardeo nuclear con partículas o fotones de alta energía.<br/>
+          El núcleo resultante puede ser inestable: <strong style="color:#800000;">¡RADIACTIVIDAD ARTIFICIAL!</strong>
+</div>
+<!-- Fórmula B(p,p')X -->
+<div style="position:absolute;left:375px;top:195px;width:210px;height:42px;background-color:#ffff99;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:bold;">
+          B( p, p´)X
+        </div>
+<!-- Rótulos coloreados y RESIDUAL bajo NÚCLEO -->
+<div style="position:absolute;left:60px;top:250px;width:840px;text-align:center;font-size:16px;font-weight:bold;line-height:1.3;">
+<span style="color:#000000;">BLANCO (</span><span style="color:#800000;">proyectil</span><span style="color:#000000;">, </span><span style="color:#006600;">partícula o fotón desprendido</span><span style="color:#000000;">) </span><span style="color:#000066;">NÚCLEO<br/>RESIDUAL</span>
+</div>
+<!-- Diagrama reacción (limpio de texto RESIDUAL) -->
+<img alt="Reacción nuclear" src="assets/parte3_slide10_reaction_diagram.png" style="position:absolute;left:70px;top:305px;width:820px;height:160px;object-fit:contain;"/>
+<!-- Caja inferior -->
+<div style="position:absolute;left:225px;top:485px;width:510px;height:60px;background-color:#ffff99;border-radius:4px;display:flex;flex-direction:column;justify-content:center;padding-left:30px;font-size:18px;font-weight:bold;line-height:1.4;text-align:left;">
+          ❖ ¡Transmutación de la materia!<br/>
+          ❖ ¡Obtención de gran cantidad de energía!
+        </div>
+</section>
+<section class="parte3 p3-slide" style="width:960px;height:700px;background-color:#ffffff;overflow:hidden;">
+<div class="master-header">TIPOS DE REACCIONES NUCLEARES (I)</div>
+<div class="master-footer-line"></div>
+<img alt="Sacyl" class="master-footer-logo" src="assets/parte3_10000000000000EF00000098E388084E.jpg"/>
+<!-- Contenido principal coloreado y text-align: left con carácter griego gamma explícito -->
+<div style="position:absolute;left:60px;top:95px;width:840px;font-size:16.5px;line-height:1.38;text-align:left;">
+          • <strong style="color:#003300;">REACCIONES DE DISPERSIÓN:</strong> El proyectil se dispersa. No hay núcleo compuesto<br/>
+<div style="margin-left:30px;margin-top:4px;margin-bottom:8px;">
+            * Colisión mecánica <strong>elástica</strong>: no hay alteración nuclear<br/>
+            * Colisión <strong>inelástica</strong>: núcleo excitado
+          </div>
+          • <strong style="color:#800000;">CAPTURA RADIATIVA:</strong> El núcleo compuesto <strong>emite</strong> radiación <strong>gamma</strong> (1 fotón o cascada de fotones)<br/>
+<div style="margin-left:280px;margin-top:6px;margin-bottom:8px;font-weight:bold;color:#ff0000;font-size:17.5px;">
+<sup>113</sup>Cd (n, <span style="font-family:'Times New Roman',serif;font-style:italic;font-size:19px;">γ</span>) <sup>114</sup>Cd
+          </div>
+          • <strong style="color:#000066;">EMISIÓN DE PARTÍCULAS:</strong> El núcleo compuesto <strong>emite partículas</strong><br/>
+<div style="margin-left:15px;font-size:15px;margin-top:2px;">(Típica de núcleos ligeros. En núcleos pesados hay una barrera coulombiana mayor)</div>
+<div style="margin-left:180px;margin-top:6px;margin-bottom:8px;font-weight:bold;color:#c0504d;">
+<sup>6</sup>Li(n,α)<sup>3</sup>H              <sup>14</sup>N(n,p)<sup>14</sup>C
+          </div>
+          • <strong style="color:#ff6600;">FOTODESINTEGRACIÓN:</strong> El <strong>proyectil</strong> es un <strong>fotón</strong>
+</div>
+<!-- Fórmulas recortadas limpias -->
+<img alt="6Li(n,alpha)3H" src="assets/parte3_10000000000000BC000000191BD0F6F9.png" style="position:absolute;left:195px;top:515px;width:242px;height:31px;object-fit:contain;"/>
+<img alt="14N(n,p)14C" src="assets/parte3_10000000000000AC00000019F591303E.png" style="position:absolute;left:485px;top:515px;width:221px;height:31px;object-fit:contain;"/>
+</section>
+<section class="parte3 p3-slide" style="width:960px;height:700px;background-color:#ffffff;overflow:hidden;">
+<div class="master-header">TIPOS DE REACCIONES NUCLEARES (II)</div>
+<div class="master-footer-line"></div>
+<img alt="Sacyl" class="master-footer-logo" src="assets/parte3_10000000000000EF00000098E388084E.jpg"/>
+<!-- FISIÓN Badge con texto verde -->
+<div style="position:absolute;left:69px;top:105px;width:131px;height:75px;background-color:#ffff99;border:1px solid #000000;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:bold;color:#7da026;">
+          FISIÓN:
+        </div>
+<!-- Descripción Fisión -->
+<div style="position:absolute;left:230px;top:105px;width:660px;font-size:17px;line-height:1.35;text-align:left;">
+          El núcleo compuesto se escinde en varios fragmentos asimétricos emitiendo neutrones
+        </div>
+<!-- Fotos históricas izquierda -->
+<img alt="Reactor nuclear" src="assets/parte3_10000000000000BA000000B2428DF281.jpg" style="position:absolute;left:77px;top:190px;width:125px;height:125px;object-fit:cover;"/>
+<img alt="Explosión nuclear" src="assets/parte3_10000000000000B2000000B43799A299.jpg" style="position:absolute;left:77px;top:325px;width:125px;height:125px;object-fit:cover;"/>
+<!-- Diagrama fisión -->
+<img alt="Diagrama de fisión" src="assets/parte3_slide12_fission_diagram.png" style="position:absolute;left:225px;top:165px;width:675px;height:175px;object-fit:contain;"/>
+<!-- Texto neutrones con U en rojo -->
+<div style="position:absolute;left:225px;top:345px;width:675px;font-size:15.5px;text-align:left;">
+          Ej.: <sup>235</sup><span style="color:#c00000;font-weight:bold;">U</span> bombardeado con un neutrón; en su fragmentación emite otros neutrones
+        </div>
+<!-- Caja Fermi -->
+<div style="position:absolute;left:244px;top:380px;width:640px;height:48px;background-color:#ffffff;border:1px solid #000000;border-radius:4px;padding:6px 12px;font-size:14.5px;line-height:1.3;box-sizing:border-box;text-align:left;">
+          Fermi fue el primero en conseguir una reacción en cadena en un reactor nuclear.<br/>
+          Universidad de Chicago, 1942
+        </div>
+<!-- FUSIÓN Badge con texto verde -->
+<div style="position:absolute;left:62px;top:465px;width:145px;height:75px;background-color:#ffff99;border:1px solid #000000;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:bold;color:#7da026;">
+          FUSIÓN:
+        </div>
+<!-- Descripción Fusión -->
+<div style="position:absolute;left:230px;top:465px;width:660px;font-size:17px;text-align:left;">
+          varios núcleos ligeros se unen para formar otro más pesado
+        </div>
+<!-- Diagrama Fusión (limpio de texto pesado) -->
+<img alt="Diagrama de fusión" src="assets/parte3_slide12_fusion_diagram.png" style="position:absolute;left:240px;top:505px;width:650px;height:95px;object-fit:contain;"/>
+</section>
+<section class="parte3 p3-slide" style="width:960px;height:700px;background-color:#ffffff;overflow:hidden;">
+<div class="master-header">RESUMEN</div>
+<div class="master-footer-line"></div>
+<img alt="Sacyl" class="master-footer-logo" src="assets/parte3_10000000000000EF00000098E388084E.jpg"/>
+<div style="position:absolute;left:60px;top:160px;width:820px;font-size:26px;line-height:2.3;text-align:left;">
+<ul style="list-style-type:disc;padding-left:40px;margin:0;">
+<li>Estructura del núcleo</li>
+<li>Estabilidad del núcleo</li>
+<li>Radiactividad natural y modos de desintegración</li>
+<li>Radiactividad artificial (reacciones nucleares)</li>
+</ul>
+</div>
+</section>
+<section class="parte3 p3-slide" style="width:960px;height:700px;background-color:#ffffff;overflow:hidden;">
+<div class="master-footer-line"></div>
+<img alt="Sacyl" class="master-footer-logo" src="assets/parte3_10000000000000EF00000098E388084E.jpg"/>
+<div style="position:absolute;left:48px;top:220px;width:864px;text-align:center;font-size:40px;font-weight:bold;line-height:1.3;">
+          ORIGEN DE LAS RADIACIONES<br/>IONIZANTES
+        </div>
+</section>
+<section class="parte3 p3-slide" style="width:960px;height:700px;background-color:#ffffff;overflow:hidden;">
+<!-- Banner más alto de 2 líneas -->
+<div class="master-header" style="height:102px;font-size:23px;line-height:1.25;">
+          ORIGEN DE LAS RADIACIONES IONIZANTES:<br/>LOS RAYOS X
+        </div>
+<div class="master-footer-line"></div>
+<img alt="Sacyl" class="master-footer-logo" src="assets/parte3_10000000000000EF00000098E388084E.jpg"/>
+<!-- Caja naranja (colores restaurados y text-align: left) -->
+<div style="position:absolute;left:73px;top:125px;width:805px;height:110px;background-color:#ffcc66;border:1px solid #000000;border-radius:4px;padding:10px 16px;font-size:16px;line-height:1.35;box-sizing:border-box;text-align:left;">
+          • Cuando el <strong>átomo</strong> tiene <span style="color:#006600;font-weight:bold;">exceso de energía</span>, ésta se puede emitir por los <span style="color:#4623db;font-weight:bold;">electrones de la corteza</span> en forma de radiación electromagnética. En ocasiones la energía emitida corresponde al espectro de los rayos X (fotones de alta energía)
+        </div>
+<!-- Caja amarilla (colores restaurados y text-align: left) -->
+<div style="position:absolute;left:75px;top:248px;width:805px;height:75px;background-color:#ffff99;border:1px solid #000000;border-radius:4px;padding:10px 16px;font-size:16px;line-height:1.35;box-sizing:border-box;text-align:left;">
+          • Radiación de frenado: Cuando los <span style="color:#4623db;font-weight:bold;">electrones</span> que penetran en algún medio material <span style="color:#800000;font-weight:bold;">se frenan</span> (éste es el fundamento de los equipos de rayos X).
+        </div>
+<!-- Foto Roentgen -->
+<img alt="Tubo RX" src="assets/parte3_100000000000009A000000C61A4376DB.jpg" style="position:absolute;left:69px;top:345px;width:167px;height:215px;object-fit:cover;"/>
+<!-- Diagrama RX (con letra 'F' de FUNDAMENTO íntegra) -->
+<img alt="Fundamento de rayos X" src="assets/parte3_slide15_xray_diagram.png" style="position:absolute;left:232px;top:345px;width:650px;height:215px;object-fit:contain;"/>
+</section>
+<section class="parte4 p4-slide" style="width:960px;height:700px;background-color:#ffffff;overflow:hidden;">
+<div class="title-banner" style="height:102px;font-size:25px;line-height:1.2;">
+          ORIGEN DE LAS RADIACIONES IONIZANTES: LA RADIACTIVIDAD
+        </div>
+<div style="position:absolute;left:44px;top:135px;width:791px;height:338px;background-color:#ffff99;border:1px solid #000000;">
+<div style="position:absolute;left:20px;top:10px;width:305px;font-size:20px;font-weight:bold;color:#000000;">
+            LA RADIACTIVIDAD:
+          </div>
+<img alt="Átomo" src="assets/parte4_slide1_atom.png" style="position:absolute;left:0;top:46px;width:323px;height:292px;border-top:1px solid #000000;border-right:1px solid #000000;"/>
+<div style="position:absolute;left:340px;top:85px;width:406px;height:70px;background-color:#ffcc00;display:flex;align-items:center;padding:12px 18px;font-size:22px;font-weight:bold;color:#000000;">
+            Radiación <span style="color:#b00000;margin-left:6px;">alfa, beta y gamma.</span>
+</div>
+<div style="position:absolute;left:335px;top:175px;width:440px;font-size:18px;line-height:1.4;color:#000000;text-align:justify;">
+            Emisión de partículas o radiación electromagnética de alta energía debida a la inestabilidad de los núcleos atómicos.
+          </div>
+</div>
+<div class="footer-line"></div>
+<img alt="SACYL" class="footer-logo" src="assets/parte4_10000000000000EF00000098E388084E.jpg"/>
+</section>
+<section class="parte4 p4-slide" style="width:960px;height:700px;background-color:#ffffff;overflow:hidden;">
+<div class="title-banner" style="height:67px;font-size:28px;">
+          RAYOS X Y RAYOS GAMMA
+        </div>
+<div style="position:absolute;left:48px;top:105px;width:864px;height:380px;">
+<ul style="font-size:22px;line-height:1.55;color:#000000;margin:0;padding-left:28px;">
+<li style="margin-bottom:18px;">Ambos consisten en radiación electromagnética (fotones) de alta energía</li>
+<li style="margin-bottom:18px;">La diferencia en la denominación se debe en parte a motivos históricos</li>
+<li style="margin-bottom:10px;">Se utiliza una denominación u otra según el origen:
+              <ul style="list-style-type:'– ';padding-left:24px;margin-top:12px;">
+<li style="margin-bottom:12px;">Rayos X: Procesos en la corteza electrónica (nivel atómico) o radiación de frenado</li>
+<li>Radiación gamma: procesos nucleares</li>
+</ul>
+</li>
+</ul>
+</div>
+<img alt="Espectro electromagnético" src="assets/parte4_slide2_spectrum.png" style="position:absolute;left:48px;top:495px;width:864px;height:100px;object-fit:contain;"/>
+<div class="footer-line"></div>
+<img alt="SACYL" class="footer-logo" src="assets/parte4_10000000000000EF00000098E388084E.jpg"/>
+</section>
+<section class="parte4 p4-slide" style="width:960px;height:700px;background-color:#ffffff;overflow:hidden;">
+<div style="position:absolute;left:48px;top:220px;width:864px;text-align:center;font-size:42px;font-weight:bold;color:#000000;line-height:1.35;">
+          INTERACCIÓN DE LA RADIACIÓN<br/>CON LA MATERIA
+        </div>
+<div class="footer-line"></div>
+<img alt="SACYL" class="footer-logo" src="assets/parte4_10000000000000EF00000098E388084E.jpg"/>
+</section>
+<section class="parte4 p4-slide" style="width:960px;height:700px;background-color:#ffffff;overflow:hidden;">
+<div class="title-banner" style="height:67px;font-size:26px;">
+          INTERACCIÓN DE LA RADIACIÓN CON LA MATERIA
+        </div>
+<div style="position:absolute;left:55px;top:175px;width:850px;">
+<ul style="font-size:28px;line-height:2.2;color:#000000;margin:0;padding-left:35px;">
+<li>Fotones</li>
+<li>Partículas cargadas</li>
+<li>Partículas sin carga (Neutrones)</li>
+</ul>
+</div>
+<div class="footer-line"></div>
+<img alt="SACYL" class="footer-logo" src="assets/parte4_10000000000000EF00000098E388084E.jpg"/>
+</section>
+<section class="parte4 p4-slide" style="width:960px;height:700px;background-color:#ffffff;overflow:hidden;">
+<div class="title-banner" style="height:100px;font-size:23px;line-height:1.2;">
+          INTERACCIÓN DE LOS FOTONES CON LA MATERIA:ATENUACIÓN (I)
+        </div>
+<div style="position:absolute;left:30px;top:115px;width:890px;font-size:18px;line-height:1.35;color:#000000;">
+          Cuando la radiación electromagnética (Rayos X ó gamma) penetra en un medio natural disminuye el número de fotones por unidad de recorrido <span style="color:#ff4500;font-weight:bold;">(ATENUACIÓN)</span> debido a dispersiones y absorciones.
+        </div>
+<div style="position:absolute;left:35px;top:190px;font-size:23px;font-weight:bold;color:#000000;">
+          ATENUACIÓN: <span style="color:#0055cc;">N = N<sub>0</sub> e <sup>-µx</sup></span>
+</div>
+<img alt="Diagrama Atenuación" src="assets/parte4_slide5_diagram.png" style="position:absolute;left:25px;top:235px;width:450px;height:360px;object-fit:contain;"/>
+<!-- Definiciones de x y mu con corchete agrupador CSS -->
+<div style="position:absolute;left:500px;top:180px;display:flex;align-items:stretch;">
+<div style="width:12px;border-left:3px solid #000000;border-top:3px solid #000000;border-bottom:3px solid #000000;margin-right:12px;"></div>
+<div style="width:405px;font-size:18px;line-height:1.4;color:#000000;">
+<p style="margin:0 0 10px 0;">x = longitud recorrida</p>
+<p style="margin:0;">µ = Coeficiente de atenuación lineal= <span style="color:#0055cc;">probabilidad de interacción por unidad de recorrido</span></p>
+</div>
+</div>
+<div style="position:absolute;left:495px;top:345px;width:410px;height:210px;border:2px solid #77933c;padding:16px 20px;">
+<div style="font-size:20px;font-weight:bold;color:#000000;margin-bottom:12px;">Fórmula válida si:</div>
+<ul style="font-size:19px;line-height:1.6;color:#000000;margin:0;padding-left:25px;">
+<li>Fotones monoenergéticos</li>
+<li>Haz colimado</li>
+<li>Absorbente delgado</li>
+</ul>
+</div>
+<div class="footer-line"></div>
+<img alt="SACYL" class="footer-logo" src="assets/parte4_10000000000000EF00000098E388084E.jpg"/>
+</section>
+<section class="parte4 p4-slide" style="width:960px;height:700px;background-color:#ffffff;overflow:hidden;">
+<div class="title-banner" style="height:100px;font-size:23px;line-height:1.2;">
+          INTERACCIÓN DE LOS FOTONES CON LA MATERIA:ATENUACIÓN (II)
+        </div>
+<div style="position:absolute;left:36px;top:118px;width:890px;font-size:21px;font-weight:bold;color:#000000;">
+          COEFICIENTE DE ATENUACIÓN MÁSICO: <span style="color:#ff4500;">µ<sub>m</sub> = µ/ρ</span> (cm <sup>2</sup>/g)
+        </div>
+<div style="position:absolute;left:90px;top:168px;width:630px;padding:8px 18px;border:2px solid #77933c;font-size:20px;font-weight:bold;color:#000000;">
+          Ley de atenuación: <span style="color:#0055cc;">N = N<sub>0</sub> e <sup>-µ<sub>m</sub>x<sub>m</sub></sup> ;</span> donde x<sub>m</sub>= x·ρ
+        </div>
+<img alt="Espesor de semirreducción diagram" src="assets/parte4_slide6_diagram.png" style="position:absolute;left:15px;top:235px;width:430px;height:355px;object-fit:contain;"/>
+<div style="position:absolute;left:460px;top:275px;font-size:22px;font-weight:bold;color:#000000;">
+          ESPESOR DE SEMIRREDUCCIÓN:
+        </div>
+<div style="position:absolute;left:460px;top:325px;width:440px;font-size:20px;line-height:1.4;color:#000000;">
+<span style="color:#ff4500;">Grosor</span> del material que consigue atenuar el <span style="color:#ff4500;">haz</span> a la <span style="color:#ff4500;">mitad</span>:
+        </div>
+<div style="position:absolute;left:470px;top:420px;width:400px;padding:12px 20px;border:2px solid #800000;font-size:24px;font-weight:bold;color:#800000;text-align:center;line-height:1.3;">
+          d<sub>1/2</sub>= Ln(2) / µ = 0.693/<br/>µ
+        </div>
+<div class="footer-line"></div>
+<img alt="SACYL" class="footer-logo" src="assets/parte4_10000000000000EF00000098E388084E.jpg"/>
+</section>
+<section class="parte4 p4-slide" style="width:960px;height:700px;background-color:#ffffff;overflow:hidden;">
+<div class="title-banner" style="height:100px;font-size:23px;line-height:1.2;">
+          INTERACCIÓN DE LOS FOTONES CON LA MATERIA:ATENUACIÓN (III)
+        </div>
+<img alt="Gráfico Atenuación" src="assets/parte4_slide7_graph.png" style="position:absolute;left:180px;top:125px;width:557px;height:360px;object-fit:contain;"/>
+<div style="position:absolute;left:140px;top:520px;width:640px;text-align:center;font-size:22px;font-weight:bold;color:#ff4500;">
+          ATENUACIÓN DE LA RADIACIÓN ELECTROMAGNÉTICA
+        </div>
+<div class="footer-line"></div>
+<img alt="SACYL" class="footer-logo" src="assets/parte4_10000000000000EF00000098E388084E.jpg"/>
+</section>
+<section class="parte4 p4-slide" style="width:960px;height:700px;background-color:#ffffff;overflow:hidden;">
+<div class="title-banner" style="height:100px;font-size:23px;line-height:1.2;">
+          INTERACCIÓN DE LOS FOTONES CON LA MATERIA:PROCESOS DE INTERACCIÓN (I)
+        </div>
+<div class="section-banner-light" style="left:86px;top:115px;width:692px;height:38px;font-size:21px;">
+          A) EFECTO FOTOELÉCTRICO
+        </div>
+<div style="position:absolute;left:595px;top:165px;width:210px;height:40px;background-color:#cc0000;color:#ffffff;font-size:22px;font-weight:bold;display:flex;align-items:center;justify-content:center;border-radius:4px;">
+          ¡ABSORCIÓN!
+        </div>
+<img alt="Efecto Fotoeléctrico" src="assets/parte4_slide8_photoelectric.png" style="position:absolute;left:35px;top:165px;width:520px;height:375px;object-fit:contain;"/>
+<div style="position:absolute;left:570px;top:220px;width:355px;height:320px;background-color:#e5e5ff;border:2px solid #800000;padding:16px 18px;">
+<ul style="font-size:16px;line-height:1.35;color:#000000;margin:0;padding-left:18px;">
+<li style="margin-bottom:12px;">El <span style="color:#cc0000;">fotón</span> interacciona con un <span style="color:#cc0000;">electrón</span> de las <span style="color:#cc0000;">capas más cercanas</span> al núcleo, cediéndole <span style="color:#cc0000;">toda su energía</span>.</li>
+<li style="margin-bottom:12px;">El <span style="color:#cc0000;">electrón</span>, si la energía es suficiente, se <span style="color:#cc0000;">escapa del átomo</span>.</li>
+<li>El <span style="color:#cc0000;">átomo</span> queda <span style="color:#cc0000;">ionizado</span>. Un <span style="color:#cc0000;">electrón</span> de las capas más alejadas <span style="color:#cc0000;">ocupa su lugar emitiendo radiación electromagnética</span></li>
+</ul>
+</div>
+<div style="position:absolute;left:138px;top:560px;width:690px;height:36px;border:1.5px solid #800000;font-size:20px;font-weight:bold;color:#000000;display:flex;align-items:center;justify-content:center;">
+          EFECTO DOMINANTE A ENERGÍAS BAJAS <span style="color:#cc0000;margin-left:6px;">(E &lt; 100 keV)</span>
+</div>
+<div class="footer-line"></div>
+<img alt="SACYL" class="footer-logo" src="assets/parte4_10000000000000EF00000098E388084E.jpg"/>
+</section>
+<section class="parte4 p4-slide" style="width:960px;height:700px;background-color:#ffffff;overflow:hidden;">
+<div class="title-banner" style="height:100px;font-size:23px;line-height:1.2;">
+          INTERACCIÓN DE LOS FOTONES CON LA MATERIA:PROCESOS DE INTERACCIÓN (II)
+        </div>
+<div class="section-banner-light" style="left:55px;top:110px;width:802px;height:38px;font-size:21px;">
+          B) EFECTO COMPTON
+        </div>
+<div style="position:absolute;left:595px;top:160px;width:210px;height:42px;background-color:#cc0000;color:#ffffff;font-size:22px;font-weight:bold;display:flex;align-items:center;justify-content:center;border-radius:4px;">
+          ¡Dispersión!
+        </div>
+<img alt="Efecto Compton" src="assets/parte4_slide9_compton.png" style="position:absolute;left:40px;top:160px;width:515px;height:375px;object-fit:contain;"/>
+<div style="position:absolute;left:565px;top:225px;width:355px;height:280px;background-color:#e5e5ff;border:2px solid #800000;padding:18px 20px;">
+<ul style="font-size:18px;line-height:1.45;color:#000000;margin:0;padding-left:18px;">
+<li style="margin-bottom:14px;">El <span style="color:#cc0000;">fotón</span> interacciona con un <span style="color:#cc0000;">electrón poco ligado</span>, cediéndole <span style="color:#cc0000;">parte de su energía</span>.</li>
+<li style="margin-bottom:14px;">El <span style="color:#cc0000;">electrón</span> se <span style="color:#cc0000;">escapa del átomo</span>.</li>
+<li>El <span style="color:#cc0000;">átomo</span> queda <span style="color:#cc0000;">ionizado</span>.</li>
+</ul>
+</div>
+<div style="position:absolute;left:96px;top:550px;width:768px;height:48px;border:1.5px solid #800000;font-size:20px;font-weight:bold;color:#000000;display:flex;align-items:center;justify-content:center;">
+          EFECTO DOMINANTE A ENERGÍAS INTERMEDIAS <span style="color:#cc0000;margin-left:6px;">(100&lt;E&lt;1.000 kev)</span>
+</div>
+<div class="footer-line"></div>
+<img alt="SACYL" class="footer-logo" src="assets/parte4_10000000000000EF00000098E388084E.jpg"/>
+</section>
+<section class="parte4 p4-slide" style="width:960px;height:700px;background-color:#ffffff;overflow:hidden;">
+<div class="title-banner" style="height:100px;font-size:23px;line-height:1.2;">
+          INTERACCIÓN DE LOS FOTONES CON LA MATERIA:PROCESOS DE INTERACCIÓN (III)
+        </div>
+<div class="section-banner-light" style="left:82px;top:115px;width:802px;height:38px;font-size:21px;">
+          C) CREACIÓN DE PARES
+        </div>
+<div style="position:absolute;left:110px;top:165px;width:170px;height:42px;background-color:#77933c;color:#ffffff;font-size:24px;font-weight:bold;display:flex;align-items:center;justify-content:center;border-radius:4px;">
+          E = m c<sup>2</sup>
+</div>
+<img alt="Creación de pares" src="assets/parte4_slide10_pair_production.png" style="position:absolute;left:85px;top:225px;width:470px;height:280px;object-fit:contain;border:2px solid #4f6228;"/>
+<div style="position:absolute;left:575px;top:190px;width:350px;height:340px;background-color:#e5e5ff;border:2px solid #800000;padding:15px 18px;">
+<ul style="font-size:16px;line-height:1.35;color:#000000;margin:0;padding-left:18px;">
+<li style="margin-bottom:12px;">El <span style="color:#cc0000;">fotón</span>, si su energía es superior a 1.022 keV, debido a la presencia de un núcleo atómico, <span style="color:#cc0000;">se materializa en un electrón y un positrón</span>.</li>
+<li style="margin-bottom:12px;">El <span style="color:#cc0000;">electrón</span> interacciona en el medio.</li>
+<li>El <span style="color:#cc0000;">positrón se aniquila con un electrón</span>, emitiendo dos <span style="color:#cc0000;">fotones de 511 keV</span> cada uno.</li>
+</ul>
+</div>
+<div style="position:absolute;left:138px;top:555px;width:697px;height:40px;border:1.5px solid #800000;font-size:20px;font-weight:bold;color:#000000;display:flex;align-items:center;justify-content:center;">
+          EFECTO DOMINANTE A ENERGÍAS ALTAS <span style="color:#cc0000;margin-left:6px;">( E&gt;1.022 keV )</span>
+</div>
+<div class="footer-line"></div>
+<img alt="SACYL" class="footer-logo" src="assets/parte4_10000000000000EF00000098E388084E.jpg"/>
+</section>
+<section class="parte4 p4-slide" style="width:960px;height:700px;background-color:#ffffff;overflow:hidden;">
+<div class="title-banner" style="height:100px;font-size:23px;line-height:1.2;">
+          INTERACCIÓN DE LOS FOTONES CON LA MATERIA:CURVAS DE ATENUACIÓN
+        </div>
+<img alt="Curvas de Atenuación" src="assets/parte4_slide11_curves.png" style="position:absolute;left:122px;top:110px;width:657px;height:450px;object-fit:contain;"/>
+<div style="position:absolute;left:145px;top:570px;width:753px;text-align:center;font-size:22px;font-weight:bold;color:#000000;">
+          Variación con la energía de los coeficientes de atenuación
+        </div>
+<div class="footer-line"></div>
+<img alt="SACYL" class="footer-logo" src="assets/parte4_10000000000000EF00000098E388084E.jpg"/>
+</section>
+<section class="parte4 p4-slide" style="width:960px;height:700px;background-color:#ffffff;overflow:hidden;">
+<div class="title-banner" style="height:100px;font-size:24px;line-height:1.2;">
+          INTERACCIÓN DE LAS PARTÍCULAS CON LA MATERIA: INTRODUCCIÓN
+        </div>
+<div style="position:absolute;left:38px;top:112px;width:884px;font-size:20px;line-height:1.35;color:#6b8e23;font-weight:bold;">
+          ➔ Cuando las partículas interaccionan con la materia producen una serie de efectos, que son función de:
+        </div>
+<img alt="Factores de interacción" src="assets/parte4_slide12_diagram.png" style="position:absolute;left:50px;top:165px;width:850px;height:245px;object-fit:contain;"/>
+<div style="position:absolute;left:93px;top:430px;width:760px;height:160px;background-color:#ebf1de;border:2px solid #800000;padding:14px 20px;">
+<div style="font-size:20px;font-weight:bold;color:#000000;margin-bottom:8px;">TIPOS DE COLISIÓN:</div>
+<div style="font-size:19px;line-height:1.5;color:#000000;padding-left:15px;">
+            · <span style="color:#cc0000;font-weight:bold;">colisión elástica</span> (sin alteración atómica ni nuclear)<br/>
+            · <span style="color:#cc0000;font-weight:bold;">colisión inelástica</span> (provoca ionización y excitación)<br/>
+            · <span style="color:#cc0000;font-weight:bold;">colisión radiativa</span> (emisión de radiación electromagnética)
+          </div>
+</div>
+<div class="footer-line"></div>
+<img alt="SACYL" class="footer-logo" src="assets/parte4_10000000000000EF00000098E388084E.jpg"/>
+</section>
+<section class="parte4 p4-slide" style="width:960px;height:700px;background-color:#ffffff;overflow:hidden;">
+<div class="title-banner" style="height:100px;font-size:24px;line-height:1.2;">
+          INTERACCIÓN DE LAS PARTÍCULAS CON LA MATERIA: COLISIÓN ELÁSTICA
+        </div>
+<img alt="Colisión Elástica" src="assets/parte4_slide13_elastic.png" style="position:absolute;left:55px;top:115px;width:850px;height:360px;object-fit:contain;"/>
+<div style="position:absolute;left:99px;top:490px;width:750px;height:105px;border:2px dashed #800080;padding:12px 18px;">
+<div style="font-size:19px;line-height:1.45;color:#2e7d32;font-weight:bold;text-align:justify;">
+            La partícula choca con los átomos del medio <span style="color:#d84315;">desviándose</span> de su trayectoria y <span style="color:#d84315;">cediendo energía</span> en forma de energía cinética.<br/>
+<span style="color:#d84315;">No se produce alteración atómica ni nuclear</span> en el medio.
+          </div>
+</div>
+<div class="footer-line"></div>
+<img alt="SACYL" class="footer-logo" src="assets/parte4_10000000000000EF00000098E388084E.jpg"/>
+</section>
+<section class="parte4 p4-slide" style="width:960px;height:700px;background-color:#ffffff;overflow:hidden;">
+<div class="title-banner" style="height:100px;font-size:24px;line-height:1.2;">
+          INTERACCIÓN DE LAS PARTÍCULAS CON LA MATERIA: COLISIÓN INELÁSTICA
+        </div>
+<div style="position:absolute;left:91px;top:112px;width:770px;height:140px;border:2px dashed #800080;padding:10px 18px;">
+<div style="font-size:18px;line-height:1.35;color:#000000;margin-bottom:6px;">
+            La partícula interacciona con los electrones atómicos transfiriendo a estos energía. Produciéndose:
+          </div>
+<div style="font-size:18px;line-height:1.4;color:#000000;padding-left:25px;">
+<div><span style="color:#e65100;font-weight:bold;">ionización</span> del átomo</div>
+<div><span style="color:#e65100;font-weight:bold;">excitación</span> del átomo</div>
+<div>Disociación o radiólisis de las moléculas</div>
+</div>
+</div>
+<img alt="Colisión Inelástica" src="assets/parte4_slide14_inelastic.png" style="position:absolute;left:50px;top:265px;width:860px;height:340px;object-fit:contain;"/>
+<div class="footer-line"></div>
+<img alt="SACYL" class="footer-logo" src="assets/parte4_10000000000000EF00000098E388084E.jpg"/>
+</section>
+<section class="parte4 p4-slide" style="width:960px;height:700px;background-color:#ffffff;overflow:hidden;">
+<div class="title-banner" style="height:100px;font-size:24px;line-height:1.2;">
+          INTERACCIÓN DE LAS PARTÍCULAS CON LA MATERIA: COLISIÓN RADIATIVA
+        </div>
+<img alt="Colisión Radiativa" src="assets/parte4_slide15_bremsstrahlung.png" style="position:absolute;left:50px;top:120px;width:490px;height:350px;object-fit:contain;"/>
+<div style="position:absolute;left:560px;top:125px;width:360px;height:365px;background-color:#ebf1de;border:2px solid #4f6228;padding:16px 18px;box-sizing:border-box;">
+<div style="font-size:16px;line-height:1.4;color:#000000;">
+<p style="margin:0 0 14px 0;">
+<span style="color:#4f6228;font-size:18px;">➤</span> La <span style="color:#c0504d;font-weight:bold;">energía de la radiación</span> electromagnética depende de la energía inicial de la partícula de lo “<span style="color:#800000;font-weight:bold;">mucho</span>” o “<span style="color:#800000;font-weight:bold;">poco</span>” <span style="color:#800000;font-weight:bold;">que se frenen</span>.
+            </p>
+<p style="margin:0 0 14px 0;">
+<span style="color:#4f6228;font-size:18px;">➤</span> <span style="color:#ff0000;font-weight:bold;">Más intenso</span> para <span style="color:#008000;font-weight:bold;">electrones</span>
+</p>
+<p style="margin:0 0 16px 0;">
+<span style="color:#4f6228;font-size:18px;">➤</span> Es el <span style="color:#c0504d;font-weight:bold;">fundamento de los equipos de Rayos X</span>
+</p>
+</div>
+<div style="display:flex;align-items:center;justify-content:center;color:#f0591c;font-size:24px;font-weight:bold;font-family:'Times New Roman', serif;margin-top:10px;">
+<span>I = cte · </span>
+<div style="display:inline-flex;flex-direction:column;align-items:center;margin-left:6px;vertical-align:middle;">
+<span style="border-bottom:2px solid #f0591c;padding:0 6px;font-size:22px;line-height:1.1;">Z<sup>2</sup> · z<sup>2</sup></span>
+<span style="padding:0 6px;font-size:22px;line-height:1.1;">m<sup>2</sup></span>
+</div>
+</div>
+</div>
+<div style="position:absolute;left:50px;top:515px;width:850px;font-size:21px;color:#000000;text-align:center;">
+          La partícula se frena ante las proximidades de un núcleo atómico y emite radiación
+        </div>
+<div class="footer-line"></div>
+<img alt="SACYL" class="footer-logo" src="assets/parte4_10000000000000EF00000098E388084E.jpg"/>
+</section>
+<section class="parte5 p5-slide" style="width:960px;height:700px;background-color:#ffffff;overflow:hidden;">
+<!-- Header Banner (max-height: 98px to prevent overlap) -->
+<div style="position:absolute;top:0;left:0;width:960px;height:98px;max-height:98px;overflow:hidden;background-color:#00b8ff;display:flex;flex-direction:column;justify-content:center;padding-left:53px;color:#ffffff;font-size:26px;font-weight:700;line-height:1.24;letter-spacing:0.2px;">
+<div>INTERACCIÓN DE LAS PARTÍCULAS CON LA</div>
+<div>MATERIA: PODER DE FRENADO Y ALCANCE (I)</div>
+</div>
+<!-- Box 1 (Purple solid thin border, top: 108px, wraps in 3 lines) -->
+<div style="position:absolute;left:50px;top:108px;width:798px;height:84px;border:1px solid #800080;border-radius:4px;padding:6px 12px;background-color:transparent;color:#28691d;font-family:'Liberation Sans','Roboto',sans-serif;font-size:18.5px;line-height:1.32;">
+          El <span style="font-weight:bold;text-decoration:underline;">poder de frenado</span> <span style="font-size:20px;font-style:italic;">S(E)</span>: la pérdida de energía que experimenta una partícula de energía <span style="font-weight:bold;font-style:italic;">E</span> en un <span style="font-weight:bold;">material determinado</span> por unidad de recorrido.
+        </div>
+<!-- Formula S(E) = - dE/dx (Blue #0033cc with blue border-bottom) -->
+<div style="position:absolute;left:95px;top:222px;display:flex;align-items:center;font-family:'Liberation Serif','Times New Roman',serif;font-size:26px;color:#0033cc;">
+<span><i>S</i>(<i>E</i>) = −</span>
+<div style="display:inline-flex;flex-direction:column;align-items:center;margin-left:6px;font-size:22px;color:#0033cc;">
+<span style="border-bottom:2px solid #0033cc;padding:0 4px;line-height:1.1;"><i>dE</i></span>
+<span style="padding:0 4px;line-height:1.1;"><i>dx</i></span>
+</div>
+</div>
+<!-- Formula: [-dE/dx]_total = [-dE/dx]_colision + [-dE/dx]_radiacion -->
+<img alt="Fórmula poder de frenado total" src="assets/parte5_10000001000001070000002F9A4421C2.png" style="position:absolute;left:385px;top:180px;width:410px;height:58px;object-fit:contain;"/>
+<!-- Text: Poder de frenado másico: -->
+<div style="position:absolute;left:447px;top:258px;font-size:20px;font-family:'Roboto','Liberation Sans',sans-serif;color:#000000;">
+          Poder de <span style="color:#800000;font-weight:bold;">frenado másico</span>:
+        </div>
+<!-- Formula: [-dE/dx]_M = (1/rho) [-dE/dx] -->
+<img alt="Fórmula poder de frenado másico" src="assets/parte5_100000010000009700000035A1CB8999.png" style="position:absolute;left:532px;top:312px;width:155px;height:48px;object-fit:contain;"/>
+<!-- Box 2: El alcance... (Purple solid thin border) -->
+<div style="position:absolute;left:391px;top:366px;width:479px;height:105px;border:1px solid #800080;border-radius:4px;padding:8px 12px;background-color:transparent;color:#28691d;font-family:'Liberation Sans','Roboto',sans-serif;font-size:17px;line-height:1.35;">
+<span style="text-decoration:underline;">El alcance</span> (cm) de una partícula en un medio se define como el recorrido total de la partícula en el material, supuesto el recorrido rectilíneo.
+        </div>
+<!-- Diagram (a) ALCANCE -->
+<img alt="Diagrama alcance (a)" src="assets/parte5_slide1_alcance_diagram.png" style="position:absolute;left:46px;top:316px;width:319px;height:220px;object-fit:contain;"/>
+<!-- Diagram (b) ALCANCE curve -->
+<img alt="Curva de alcance (b)" src="assets/parte5_10000001000003E0000001F8740F101E.png" style="position:absolute;left:600px;top:480px;width:245px;height:88px;object-fit:contain;"/>
+<!-- Footer Line -->
+<div style="position:absolute;left:0;top:620px;width:843px;height:3px;background-color:#00b8ff;"></div>
+<!-- Sacyl Logo -->
+<img alt="Logo Sacyl" src="assets/parte5_10000000000000EF00000098E388084E.jpg" style="position:absolute;left:21px;top:627px;width:75px;height:46px;object-fit:contain;"/>
+</section>
+<section class="parte5 p5-slide" style="width:960px;height:700px;background-color:#ffffff;overflow:hidden;">
+<!-- Header Banner -->
+<div style="position:absolute;top:0;left:0;width:960px;height:98px;max-height:98px;overflow:hidden;background-color:#00b8ff;display:flex;flex-direction:column;justify-content:center;padding-left:53px;color:#ffffff;font-size:26px;font-weight:700;line-height:1.24;letter-spacing:0.2px;">
+<div>INTERACCIÓN DE LAS PARTÍCULAS CON LA</div>
+<div>MATERIA: PODER DE FRENADO Y ALCANCE (II)</div>
+</div>
+<!-- Section Title: Partículas ligeras: -->
+<div style="position:absolute;left:107px;top:118px;font-size:22px;font-weight:bold;color:#d0450e;">
+          Partículas ligeras:
+        </div>
+<!-- Bullet 1: Colisiones elásticas -->
+<div style="position:absolute;left:130px;top:152px;font-size:20px;color:#28691d;">
+          • Colisiones elásticas
+        </div>
+<!-- Curly Brace 1 -->
+<img alt="Llave 1" src="assets/parte5_slide2_brace1.png" style="position:absolute;left:397px;top:143px;width:42px;height:86px;object-fit:contain;"/>
+<!-- Explanation 1 -->
+<div style="position:absolute;left:452px;top:150px;width:345px;font-size:15px;line-height:1.35;color:#28691d;text-align:justify;">
+          provocan importantes desviaciones en su trayectoria, resultando ésta, por tanto, irregular y en zigzag.
+        </div>
+<!-- Bullets 2 & 3: Colisiones inelásticas & radiativas -->
+<div style="position:absolute;left:130px;top:236px;font-size:20px;line-height:1.8;color:#28691d;">
+<div>• Colisiones inelásticas</div>
+<div>• Colisiones radiativas</div>
+</div>
+<!-- Curly Brace 2 (Clean width: 52px, span 222px..360px) -->
+<img alt="Llave 2" src="assets/parte5_slide2_brace2.png" style="position:absolute;left:386px;top:222px;width:52px;height:138px;object-fit:contain;"/>
+<!-- Explanation 2 (Separated to left:455px, width:430px, font-size:14px, entirely within brace vertical span) -->
+<div style="position:absolute;left:455px;top:234px;width:430px;font-size:14px;line-height:1.32;color:#28691d;text-align:justify;">
+          pierden su energía provocando excitaciones e ionizaciones en los átomos del medio (colisiones inelásticas, C.I.) y emitiendo fotones (colisiones radiativas C.R.)
+        </div>
+<!-- Bottom Graphic (Tracks and atoms, clean re-crop below y=355px) -->
+<img alt="Esquema trayectorias partículas" src="assets/parte5_slide2_diagram.png" style="position:absolute;left:70px;top:355px;width:755px;height:248px;object-fit:contain;"/>
+<!-- Footer Line -->
+<div style="position:absolute;left:0;top:620px;width:843px;height:3px;background-color:#00b8ff;"></div>
+<!-- Sacyl Logo -->
+<img alt="Logo Sacyl" src="assets/parte5_10000000000000EF00000098E388084E.jpg" style="position:absolute;left:21px;top:627px;width:75px;height:46px;object-fit:contain;"/>
+</section>
+<section class="parte5 p5-slide" style="width:960px;height:700px;background-color:#ffffff;overflow:hidden;">
+<!-- Header Banner -->
+<div style="position:absolute;top:0;left:0;width:960px;height:98px;max-height:98px;overflow:hidden;background-color:#00b8ff;display:flex;flex-direction:column;justify-content:center;padding-left:53px;color:#ffffff;font-size:26px;font-weight:700;line-height:1.24;letter-spacing:0.2px;">
+<div>INTERACCIÓN DE LOS NEUTRONES CON LA</div>
+<div>MATERIA</div>
+</div>
+<!-- Subtitle: Partículas sin carga -> ¡Gran penetración en la materia! -->
+<div style="position:absolute;left:137px;top:122px;font-size:21px;font-weight:bold;">
+<span style="color:#000000;">Partículas sin carga -&gt;</span> <span style="color:#ff3300;">¡Gran penetración en la materia!</span>
+</div>
+<!-- Content list -->
+<div style="position:absolute;left:51px;top:154px;width:660px;color:#000000;font-size:15px;line-height:1.32;">
+<!-- Item 1 -->
+<div style="font-size:17px;font-weight:bold;margin-bottom:2px;">
+            1. DISPERSIONES ELÁSTICAS CON LOS NÚCLEOS DEL MATERIAL:
+          </div>
+<div style="padding-left:20px;font-size:15px;margin-bottom:2px;">
+            Ej.: núcleos de hidrógeno-&gt; protones de retroceso
+          </div>
+<div style="padding-left:20px;font-size:15px;margin-bottom:2px;">
+            Los <span style="color:#0033cc;">neutrones van perdiendo energía</span> -&gt; la energía cinética media de los átomos o moléculas del medio
+          </div>
+<div style="padding-left:20px;font-size:15px;margin-bottom:8px;">
+            Neutrones de baja energía: neutrones térmicos
+          </div>
+<!-- Item 2 -->
+<div style="font-size:17px;font-weight:bold;margin-bottom:2px;">
+            2. DISPERSIONES INELÁSTICAS:
+          </div>
+<div style="padding-left:20px;font-size:15px;margin-bottom:8px;">
+            El <span style="color:#0033cc;">núcleo</span>, después del choque, queda en <span style="color:#0033cc;">estado excitado</span> -&gt; emisión, en general, de un fotón gamma
+          </div>
+<!-- Item 3 -->
+<div style="font-size:17px;font-weight:bold;margin-bottom:2px;">
+            3. ABSORCIÓN DEL NEUTRÓN POR UN NÚCLEO DEL MATERIAL:
+          </div>
+<div style="padding-left:20px;font-size:15px;margin-bottom:8px;">
+<span style="color:#0033cc;">Reacciones nucleares</span> ( captura radiativa, emisión de partículas o fisión):
+          </div>
+<div style="padding-left:30px;font-size:18px;font-weight:bold;color:#ff0000;line-height:1.55;font-family:'Liberation Serif','Times New Roman',serif;">
+<div>
+<sup>6</sup>Li (n, α) <sup>3</sup>He ;              <sup>10</sup>B (n, α) <sup>7</sup>Li ;
+            </div>
+<div>
+<sup>27</sup>Al (n, p) <sup>27</sup>Mg ;             <sup>113</sup>Cd (n, γ) <sup>114</sup>Cd
+            </div>
+</div>
+</div>
+<!-- Diagram on the right (Clean re-crop, with thin border 1px solid #800000) -->
+<img alt="Diagrama absorción neutrón" src="assets/parte5_slide3_diagram.png" style="position:absolute;left:724px;top:446px;width:160px;height:127px;border:1px solid #800000;box-sizing:border-box;object-fit:cover;"/>
+<!-- Footer Line -->
+<div style="position:absolute;left:0;top:620px;width:843px;height:3px;background-color:#00b8ff;"></div>
+<!-- Sacyl Logo -->
+<img alt="Logo Sacyl" src="assets/parte5_10000000000000EF00000098E388084E.jpg" style="position:absolute;left:21px;top:627px;width:75px;height:46px;object-fit:contain;"/>
+</section>
+<section class="parte5 p5-slide" style="width:960px;height:700px;background-color:#ffffff;overflow:hidden;">
+<!-- Header Banner (2cm / 67px high) -->
+<div style="position:absolute;top:0;left:0;width:960px;height:67px;background-color:#00b8ff;display:flex;align-items:center;padding-left:55px;color:#ffffff;font-size:32px;font-weight:700;letter-spacing:0.5px;">
+          RESUMEN
+        </div>
+<!-- Outline List (Constrained width: 700px for balanced 2-line wrapping on items 2 & 3) -->
+<div style="position:absolute;left:59px;top:134px;width:700px;">
+<ul style="list-style-type:none;padding:0;margin:0;font-size:25px;line-height:1.45;color:#000000;">
+<li style="margin-bottom:34px;display:flex;align-items:flex-start;">
+<span style="font-size:20px;margin-right:18px;margin-top:4px;">●</span>
+<span>Procesos de interacción de los fotones, atenuación</span>
+</li>
+<li style="margin-bottom:34px;display:flex;align-items:flex-start;">
+<span style="font-size:20px;margin-right:18px;margin-top:4px;">●</span>
+<span>Procesos de interacción de las partículas cargadas,<br/>recorrido libre medio</span>
+</li>
+<li style="display:flex;align-items:flex-start;">
+<span style="font-size:20px;margin-right:18px;margin-top:4px;">●</span>
+<span>Procesos de interacción de las partículas sin carga<br/>(neutrones)</span>
+</li>
+</ul>
+</div>
+<!-- Footer Line -->
+<div style="position:absolute;left:0;top:620px;width:843px;height:3px;background-color:#00b8ff;"></div>
+<!-- Sacyl Logo -->
+<img alt="Logo Sacyl" src="assets/parte5_10000000000000EF00000098E388084E.jpg" style="position:absolute;left:21px;top:627px;width:75px;height:46px;object-fit:contain;"/>
+</section>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+  <script>
+    Reveal.initialize({
+      width: 960,
+      height: 700,
+      margin: 0.04,
+      center: false,
+      controls: true,
+      progress: true,
+      hash: true,
+      transition: 'none',
+      slideNumber: 'c/t'
+    });
+  </script>
+</body>
 </html>
