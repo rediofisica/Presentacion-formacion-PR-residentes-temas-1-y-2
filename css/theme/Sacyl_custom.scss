@@ -1,0 +1,67 @@
+/**
+ * Sacyl custom theme for reveal.js.
+ * Based on the 'white' theme.
+ */
+
+// Load utils
+@use 'sass:color';
+@use 'template/mixins' as mixins;
+
+$active-color: #1C4587;
+
+// Inject theme variables (with some overrides)
+@use 'template/settings' with (
+	$background-color: #fff,
+
+	$main-color: #222,
+	$main-font: "Helvetica, 'Helvetica Neue', Arial, sans-serif",
+	$main-font-size: 42px,
+
+	$heading-color: #1C4587,
+	$heading-font: "Helvetica, 'Helvetica Neue', Arial, sans-serif",
+	$heading-font-weight: 600,
+	$heading-text-transform: uppercase,
+
+	$heading1-size: 2.5em,
+	$heading2-size: 1.6em,
+	$heading3-size: 1.3em,
+	$heading4-size: 1em,
+
+	$link-color: $active-color,
+	$link-color-hover: color.scale($active-color, $lightness: 15%),
+	$selection-color: #fff,
+	$selection-background-color: $active-color,
+
+	$overlay-element-bg-color: '0 0 0',
+	$overlay-element-fg-color: '240 240 240'
+);
+
+// Inject the theme template
+@use 'template/theme';
+
+// Specific overrides
+@include mixins.dark-bg-text-color(#fff);
+
+.reveal {
+	h1,
+	h2 {
+		text-transform: uppercase !important;
+		color: #1C4587 !important;
+	}
+
+	h2 {
+		text-align: left !important;
+	}
+
+	.slides section {
+		h1,
+		h2 {
+			text-transform: uppercase !important;
+			color: #1C4587 !important;
+		}
+
+		h2 {
+			text-align: left !important;
+		}
+	}
+}
